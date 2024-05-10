@@ -1722,8 +1722,8 @@
                                         <div class="one-acc_content">
                                             <h3 class="acc-headline">Beginner</h3>
                                             <div class="one-acc_price-wrap">
-                                                <div class="one-acc_price">$5,000</div>
-                                                <a href="" class="button w-button">Pay $50</a>
+                                                <div class="one-acc_price">$10,000</div>
+                                                <a href="" class="button w-button">Pay $500</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1737,21 +1737,10 @@
                                         <div class="liner-border is-bottom"></div>
                                         <div class="liner-border is-right"></div>
                                         <div class="one-acc_content">
-                                            <h3 class="acc-headline">Mini</h3>
-                                            <div class="one-acc_price-wrap">
-                                                <div class="one-acc_price">$10,000</div>
-                                                <a href="" class="button w-button">Pay $100</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="one-acc_wrap is-starter">
-                                        <div class="liner-border is-top-rev"></div>
-                                        <div class="liner-border is-bottom-rev"></div>
-                                        <div class="one-acc_content">
-                                            <h3 class="acc-headline">Starter</h3>
+                                            <h3 class="acc-headline">Silver</h3>
                                             <div class="one-acc_price-wrap">
                                                 <div class="one-acc_price">$25,000</div>
-                                                <a href="" class="button w-button">Pay $200</a>
+                                                <a href="" class="button w-button">Pay $2,000</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1761,33 +1750,33 @@
                                         <div class="liner-border is-bottom"></div>
                                         <div class="liner-border is-right"></div>
                                         <div class="one-acc_content">
-                                            <h3 class="acc-headline">Basic</h3>
+                                            <h3 class="acc-headline">Gold</h3>
                                             <div class="one-acc_price-wrap">
                                                 <div class="one-acc_price">$50,000</div>
                                                 <a href="{{ route('register')}}"
-                                                    class="button w-button">Pay $300</a>
+                                                    class="button w-button">Pay $5,000</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="one-acc_wrap is-starter">
                                         <div class="liner-border is-bottom-rev"></div>
                                         <div class="one-acc_content">
-                                            <h3 class="acc-headline">Advanced</h3>
+                                            <h3 class="acc-headline">Diamond</h3>
                                             <div class="one-acc_price-wrap">
                                                 <div class="one-acc_price">$100,000</div>
                                                 <a href="{{ route('register')}}"
-                                                    class="button w-button">Pay $550</a>
+                                                    class="button w-button">Pay $15,000</a>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="one-acc_wrap is-starter">
                                         <div class="liner-border is-bottom-rev"></div>
                                         <div class="one-acc_content">
-                                            <h3 class="acc-headline">Superior</h3>
+                                            <h3 class="acc-headline">VIP</h3>
                                             <div class="one-acc_price-wrap">
-                                                <div class="one-acc_price">$200,000</div>
+                                                <div class="one-acc_price">$800,000</div>
                                                 <a href="{{ route('register')}}"
-                                                    class="button w-button">Pay $1,000</a>
+                                                    class="button w-button">Pay $50,000</a>
                                             </div>
                                         </div>
                                     </div>

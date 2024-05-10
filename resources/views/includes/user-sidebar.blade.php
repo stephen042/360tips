@@ -45,9 +45,9 @@
                 <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('user_stake') }}"><i class="side-menu__icon fe fe-cast"></i><span class="side-menu__label">Stake</span></a>
                 </li>
-                <li class="slide">
+                {{-- <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('user_realEstate') }}"><i class="side-menu__icon mdi mdi-unity"></i><span class="side-menu__label">Real Estate</span></a>
-                </li>
+                </li> --}}
                 <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="{{route('user_withdraw')}}"><i class="side-menu__icon fe fe-credit-card"></i><span class="side-menu__label">- Withdrawal</span></a>
                 </li>
