@@ -127,7 +127,7 @@
                         <livewire:admin.edit-user-account :user_data="$user_data" :status_plans="$status_plans" />
                         <!-- ROW END account edit-->
 
-                        <livewire:admin.trade-progress :user_data="$user_data"/>
+                        <livewire:admin.trade-progress :user_data="$user_data" />
 
                         <!-- ROW -->
                         <div class="row row-sm">
@@ -446,7 +446,7 @@
                             </div>
                         </div>
                         <!-- END ROW -->
-                        
+
                         <!-- ROW -->
                         <div class="row row-sm">
                             <div class="col-lg-12">
@@ -470,80 +470,81 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($kyc as $counter => $kyc)
+                                                        <tr>
+                                                            <td>{{ $counter + 1 }}</td>
+                                                            <td>{{ date('Y/M/d h:i a', strtotime($kyc->created_at)) }}
+                                                            </td>
+                                                            <td>{{ $kyc->kyc_document }}</td>
+                                                            @if ($kyc->kyc_status == 2)
+                                                                <td class="text-success fs-15 fw-semibold">
+                                                                    {{ config('app.kyc_status')[$kyc->kyc_status] }}
+                                                                </td>
+                                                            @elseif ($kyc->kyc_status == 3)
+                                                                <td class="text-danger fs-15 fw-semibold">
+                                                                    {{ config('app.kyc_status')[$kyc->kyc_status] }}
+                                                                </td>
+                                                            @else
+                                                                <td class="text-info fs-15 fw-semibold">
+                                                                    {{ config('app.kyc_status')[$kyc->kyc_status] }}
+                                                                </td>
+                                                            @endif
+                                                            <td>
+                                                                <a href="{{ asset('storage/' . $kyc->kyc_proof_front) }}"
+                                                                    target="_blank"
+                                                                    class="badge bg-info mx-2 rounded-pill">
+                                                                    front
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
+                                                                <a href="{{ asset('storage/' . $kyc->kyc_proof_back) }}"
+                                                                    target="_blank"
+                                                                    class="badge bg-info mx-2 rounded-pill">
+                                                                    back
+                                                                    <i class="fas fa-eye"></i>
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex">
+                                                                    @if ($kyc->kyc_status == 1)
+                                                                        <form
+                                                                            action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                            method="post">
+                                                                            @csrf
+                                                                            <input type="hidden" name="action"
+                                                                                value="approve_kyc">
+                                                                            <input type="hidden" name="id"
+                                                                                value="{{ $kyc->kyc_id }}">
+                                                                            <button
+                                                                                class="btn btn-info btn-sm mx-1 confirm "
+                                                                                type="submit">
+                                                                                <i class="fas fa-check"></i>
+                                                                                Approve
+                                                                            </button>
+                                                                        </form>
+                                                                        <form
+                                                                            action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                            method="post">
+                                                                            @csrf
+                                                                            <input type="hidden" name="action"
+                                                                                value="decline_kyc">
+                                                                            <input type="hidden" name="id"
+                                                                                value="{{ $kyc->kyc_id }}">
+                                                                            <button
+                                                                                class="btn btn-danger btn-sm mx-1 confirm"
+                                                                                type="submit">
+                                                                                <i class="far fa-times-circle"></i>
+                                                                                Decline
+                                                                            </button>
+                                                                        </form>
+                                                                    @else
+                                                                        <button class="btn btn-success btn-sm"
+                                                                            type="submit" disabled>Completed</button>
+                                                                    @endif
+                                                                </div>
+
+
+                                                            </td>
+                                                        </tr>
                                                     @endforeach
-                                                    <tr>
-                                                        <td>{{ $counter + 1 }}</td>
-                                                        <td>{{ date('Y/M/d h:i a', strtotime($kyc->created_at)) }}</td>
-                                                        <td>{{ $kyc->kyc_document }}</td>
-                                                        @if ($kyc->kyc_status == 2)
-                                                            <td class="text-success fs-15 fw-semibold">
-                                                                {{ config('app.kyc_status')[$kyc->kyc_status] }}
-                                                            </td>
-                                                        @elseif ($kyc->kyc_status == 3)
-                                                            <td class="text-danger fs-15 fw-semibold">
-                                                                {{ config('app.kyc_status')[$kyc->kyc_status] }}
-                                                            </td>
-                                                        @else
-                                                            <td class="text-info fs-15 fw-semibold">
-                                                                {{ config('app.kyc_status')[$kyc->kyc_status] }}
-                                                            </td>
-                                                        @endif
-                                                        <td>
-                                                            <a href="{{ asset('storage/' . $kyc->kyc_proof_front) }}"
-                                                                target="_blank"
-                                                                class="badge bg-info mx-2 rounded-pill">
-                                                                front
-                                                                <i class="fas fa-eye"></i>
-                                                            </a>
-                                                            <a href="{{ asset('storage/' . $kyc->kyc_proof_back) }}"
-                                                                target="_blank"
-                                                                class="badge bg-info mx-2 rounded-pill">
-                                                                back
-                                                                <i class="fas fa-eye"></i>
-                                                            </a>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex">
-                                                                @if ($kyc->kyc_status == 1)
-                                                                    <form
-                                                                        action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="action"
-                                                                            value="approve_kyc">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $kyc->kyc_id }}">
-                                                                        <button
-                                                                            class="btn btn-info btn-sm mx-1 confirm "
-                                                                            type="submit">
-                                                                            <i class="fas fa-check"></i>
-                                                                            Approve
-                                                                        </button>
-                                                                    </form>
-                                                                    <form
-                                                                        action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="action"
-                                                                            value="decline_kyc">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $kyc->kyc_id }}">
-                                                                        <button
-                                                                            class="btn btn-danger btn-sm mx-1 confirm"
-                                                                            type="submit">
-                                                                            <i class="far fa-times-circle"></i>
-                                                                            Decline
-                                                                        </button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="btn btn-success btn-sm"
-                                                                        type="submit" disabled>Completed</button>
-                                                                @endif
-                                                            </div>
-
-
-                                                        </td>
-                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
