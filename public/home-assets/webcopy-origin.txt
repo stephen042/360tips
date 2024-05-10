@@ -1,0 +1,404 @@
+Uri: https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\ajax\libs\webfont\1.6.26\webfont.js
+Content Type: text/javascript
+
+Uri: https://assets-global.website-files.com/647ae04ed1e08695681f7e4e/647b33ae159f326b03579342_Trading Period.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\647ae04ed1e08695681f7e4e\647b33ae159f326b03579342_Trading Period.svg
+Content Type: image/svg+xml
+
+Uri: https://assets-global.website-files.com/647ae04ed1e08695681f7e4e/647b33aea0414130365fa078_Profit Target.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\647ae04ed1e08695681f7e4e\647b33aea0414130365fa078_Profit Target.svg
+Content Type: image/svg+xml
+
+Uri: https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\img\background-image.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\index.htm
+Content Type: text/html
+
+Uri: https://fundingtraders.com/assets/css/styles.css?ver=1
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\css\styles.css
+Content Type: text/css
+
+Uri: https://fundingtraders.com/assets/fav/favicon-apple-touch.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\fav\favicon-apple-touch.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/fav/favicon.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\fav\favicon.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/affiliates-90-day.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-90-day.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/affiliates-account-manager.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-account-manager.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/affiliates-community.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-community.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/affiliates-earn.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-earn.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/affiliates-gains.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-gains.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/affiliates-marketing.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-marketing.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/affiliates-monthly-payout.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\affiliates-monthly-payout.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-2.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-2.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-3.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-3.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-5.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-5.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-blur.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-blur.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-cd-bottom.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-cd-bottom.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-cd-radial.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-cd-radial.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-frame-1.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-frame-1.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-frame-2.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-frame-2.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-frame-3.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-frame-3.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-frame-blue.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-frame-blue.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-frame.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-frame.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/bg-light-1.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-light-1.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-menu-mobile.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-menu-mobile.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-process-steps-rect.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-process-steps-rect.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/bg-process-steps.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-process-steps.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/bg-radial-gradient-flipped.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-radial-gradient-flipped.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-rectangle.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-rectangle.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg-steps-circle.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg-steps-circle.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg_steps_bottom.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg_steps_bottom.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/bg_steps_top.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\bg_steps_top.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-blue-checkmark.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-blue-checkmark.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-browser-buttons.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-browser-buttons.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-browser-person.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-browser-person.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-checkbox.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-checkbox.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-flag-france.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-flag-france.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-flag-germany.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-flag-germany.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-flag-sweden.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-flag-sweden.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-flag-uk.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-flag-uk.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-flag-usa.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-flag-usa.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-process-step-1.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-process-step-1.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-process-step-2.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-process-step-2.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-process-step-3.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-process-step-3.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-profit-target.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-profit-target.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/icon-trading-period.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\icon-trading-period.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/image-mobile-mockkup-dashboard.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mobile-mockkup-dashboard.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-desktop-front-view.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-desktop-front-view.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-ipad-right-view.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-ipad-right-view.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-iphone-blue.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-iphone-blue.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-iphone.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-iphone.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-maacbook-rock.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-maacbook-rock.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-macbook-front-view.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-macbook-front-view.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-macbook-front.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-macbook-front.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-macbook-phone.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-macbook-phone.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-mockup-new-eval.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-mockup-new-eval.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-payout-methods.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-payout-methods.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-process-step-1.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-process-step-1.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-process-step-2.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-process-step-2.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-process-step-3.png
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-process-step-3.png
+Content Type: image/png
+
+Uri: https://fundingtraders.com/assets/img/image-profile-stan-ceo.jpg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\image-profile-stan-ceo.jpg
+Content Type: image/jpeg
+
+Uri: https://fundingtraders.com/assets/img/logo-benzinga.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-benzinga.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/logo-bloomberg.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-bloomberg.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/logo-funding-traders-footer.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-funding-traders-footer.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/logo-funding-traders-mobile.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-funding-traders-mobile.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/logo-funding-traders.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-funding-traders.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/logo-marketwatch.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-marketwatch.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/logo-streetinsider.jpg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-streetinsider.jpg
+Content Type: image/jpeg
+
+Uri: https://fundingtraders.com/assets/img/logo-yahoo.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\logo-yahoo.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/img/testimonial-1.jpg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\testimonial-1.jpg
+Content Type: image/jpeg
+
+Uri: https://fundingtraders.com/assets/img/testimonial-2.jpg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\testimonial-2.jpg
+Content Type: image/jpeg
+
+Uri: https://fundingtraders.com/assets/img/testimonial-3.jpg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\testimonial-3.jpg
+Content Type: image/jpeg
+
+Uri: https://fundingtraders.com/assets/img/vector-38.svg
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\img\vector-38.svg
+Content Type: image/svg+xml
+
+Uri: https://fundingtraders.com/assets/js/cmsslider.min.js
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\cmsslider.min.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243159
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243164
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-1.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243165
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-2.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243169
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-3.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243170
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-4.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243171
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-5.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243203
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-6.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243204
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-7.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/fundingtraders.js?ver=1715243205
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\fundingtraders-8.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/js/jquery-3.7.1.min.js
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\js\jquery-3.7.1.min.js
+Content Type: application/javascript
+
+Uri: https://fundingtraders.com/assets/vid/bg-sphere.mp4?dl=0
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\assets\vid\bg-sphere.mp4
+Content Type: video/mp4
+
+Uri: https://fundingtraders.com/contact
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\contact.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/privacy-policy
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\privacy-policy.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/prop-trading
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\prop-trading.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/prop-trading-affiliates
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\prop-trading-affiliates.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/prop-trading-faq
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\prop-trading-faq.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/prop-trading-firm
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\prop-trading-firm.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/refund
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\refund.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/terms
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\terms.html
+Content Type: text/html
+
+Uri: https://fundingtraders.com/trader-funding
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\trader-funding.html
+Content Type: text/html
+
+Uri: https://script.tapfiliate.com/tapfiliate.js
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\tapfiliate.js
+Content Type: application/javascript
+
+Uri: https://www.facebook.com/tr?id=3616614748582193&ev=PageView&noscript=1
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\tr
+Content Type: text/plain
+
+Uri: https://www.google.com/recaptcha/api.js?render=6LeuGMUpAAAAAAb2bKGWpjVlvC7UpnYzceFiYgDE
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\recaptcha\api.js
+Content Type: text/javascript
+
+Uri: https://www.googletagmanager.com/gtag/js?id=G-H20B6QYEP7
+File Name: C:\Users\user\Documents\templates\fundingtraders.com\gtag\js
+Content Type: application/javascript
+
