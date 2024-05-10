@@ -3,14 +3,10 @@
     <aside class="app-sidebar">
         <div class="side-header">
             <a class="header-brand1" href="{{ route('user_dashboard')}}">
-                {{-- <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img desktop-logo" alt="logo"> --}}
-                <span class="header-brand-img desktop-logo h1">360𝖝𝖙𝖎𝖕𝖘</span>
-                {{-- <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img toggle-logo" alt="logo"> --}}
-                {{-- <span class="header-brand-img toggle-logo h1">𓂀 𝟛𝟞𝟘𝕩𝕥𝕚𝕡𝕤 𓂀</span> --}}
-                {{-- <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img light-logo" alt="logo"> --}}
-                {{-- <span class="header-brand-img light-logo h1">𓂀 𝟛𝟞𝟘𝕩𝕥𝕚𝕡𝕤 𓂀</span> --}}
-                {{-- <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img light-logo1" alt="logo"> --}}
-                <span class="header-brand-img light-logo1 h1">360𝖝𝖙𝖎𝖕𝖘</span>
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img desktop-logo" alt="logo">
+                <img src="{{ URL('home-assets/assets/fav/favicon-apple-touch.png') }}" class="header-brand-img toggle-logo" alt="logo">
+                <img src="{{ URL('home-assets/assets/fav/favicon-apple-touch.png') }}" class="header-brand-img light-logo" alt="logo">
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img light-logo1" style="filter: brightness(0.5);" alt="logo">
             </a>
             <!-- LOGO -->
         </div>

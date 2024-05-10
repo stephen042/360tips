@@ -5,16 +5,19 @@
                 href="javascript:void(0);"></a>
             <div class="responsive-logo">
                 <a href="{{ route('admin_dashboard') }}" class="header-logo">
-                    <img src="{{ URL('assets/images/brand/logo-3.png') }}" class="mobile-logo logo-1" alt="logo">
-                    <img src="{{ URL('assets/images/brand/logo.png') }}" class="mobile-logo dark-logo-1" alt="logo">
+                    <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo logo-1"
+                        style="filter: brightness(0.5);" alt="logo">
+
+                    <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}"
+                        class="mobile-logo dark-logo-1" alt="logo">
                 </a>
             </div>
             <!-- sidebar-toggle-->
             <a class="logo-horizontal " href="{{ route('admin_dashboard') }}">
-                <img src="{{ URL('assets/images/brand/logo.png') }}" class="header-brand-img desktop-logo"
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo dark-logo-1"
                     alt="logo">
-                <img src="{{ URL('assets/images/brand/logo-3.png') }}" class="header-brand-img light-logo1"
-                    alt="logo">
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo logo-1"
+                    style="filter: brightness(0.5);" alt="logo">
             </a>
             <!-- LOGO -->
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
@@ -48,7 +51,7 @@
                                             <img src="{{ asset('storage/' . $admin_data->profile_pic) }}"
                                                 alt="profile-user" class="avatar profile-user brround cover-image">
                                         @else
-                                            <img src="{{asset('assets/images/profile.png')}}" alt="User Avatar"
+                                            <img src="{{ asset('assets/images/profile.png') }}" alt="User Avatar"
                                                 class="rounded-circle avatar-lg me-2">
                                         @endif
                                     </span>
@@ -57,7 +60,7 @@
                                     <div class="drop-heading">
                                         <div class="text-center">
                                             <h5 class="text-dark mb-0">
-                                                {{ $admin_data->first_name .' '. $admin_data->last_name }}
+                                                {{ $admin_data->first_name . ' ' . $admin_data->last_name }}
                                             </h5>
                                             <small class="text-muted">Admin</small>
                                         </div>

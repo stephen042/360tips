@@ -4,23 +4,24 @@
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar"
                 href="javascript:void(0);"></a>
             <div class="responsive-logo">
-                <a href="{{ route('user_dashboard') }}" class="header-logo">
-                    {{-- <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo logo-1" alt="logo"> --}}
-                    <span class="mobile-logo logo-1 h1">360𝖝𝖙𝖎𝖕𝖘</span>
-                    <span class="mobile-logo dark-logo-1 h1">360𝖝𝖙𝖎𝖕𝖘</span>
-                    {{-- <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo dark-logo-1" alt="logo"> --}}
+                <a href="{{ route('user_dashboard') }}" class="header-logo" style="margin-left: 60px;">
+                    <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo logo-1"
+                        style="filter: brightness(0.5);" alt="logo">
+
+                    <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}"
+                        class="mobile-logo dark-logo-1" alt="logo">
                 </a>
             </div>
             <!-- sidebar-toggle-->
             <a class="logo-horizontal " href="{{ route('user_dashboard') }}">
-                <img src="{{ asset('home-assets/assets/fav/favicon-apple-touch.png') }}" class="header-brand-img desktop-logo"
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo dark-logo-1"
                     alt="logo">
-                <img src="{{ asset('home-assets/assets/fav/favicon-apple-touch.png') }}" class="header-brand-img light-logo1"
-                    alt="logo">
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="mobile-logo logo-1"
+                    style="filter: brightness(0.5);" alt="logo">
             </a>
             <!-- LOGO -->
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
-                
+
                 <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4"
                     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">

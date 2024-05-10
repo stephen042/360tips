@@ -3,13 +3,10 @@
     <aside class="app-sidebar">
         <div class="side-header">
             <a class="header-brand1" href="{{ route('user_dashboard') }}">
-                <img src="{{ URL('assets/images/brand/logo.png') }}" class="header-brand-img desktop-logo" alt="logo">
-                <img src="{{ URL('assets/images/brand/logo-1.png') }}" class="header-brand-img toggle-logo"
-                    alt="logo">
-                <img src="{{ URL('assets/images/brand/logo-2.png') }}" class="header-brand-img light-logo"
-                    alt="logo">
-                <img src="{{ URL('assets/images/brand/logo-3.png') }}" class="header-brand-img light-logo1"
-                    alt="logo">
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img desktop-logo" alt="logo">
+                <img src="{{ URL('home-assets/assets/fav/favicon-apple-touch.png') }}" class="header-brand-img toggle-logo" alt="logo">
+                <img src="{{ URL('home-assets/assets/fav/favicon-apple-touch.png') }}" class="header-brand-img light-logo" alt="logo">
+                <img src="{{ URL('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img light-logo1" style="filter: brightness(0.5);" alt="logo">
             </a>
             <!-- LOGO -->
         </div>

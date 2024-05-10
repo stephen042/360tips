@@ -22,7 +22,7 @@
                 <div class="col col-login mx-auto mt-7">
                     <div class="text-center">
                         <a href="/">
-                            <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img" alt="">
+                            <img src="{{ asset('home-assets/assets/img/logo-funding-traders.svg') }}" class="header-brand-img" style="margin-left: 50px;" alt="">
                         </a>
                     </div>
                 </div>

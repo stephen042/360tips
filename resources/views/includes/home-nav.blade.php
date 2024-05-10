@@ -32,6 +32,11 @@
                                     <div class="link-text is-header">Contact</div>
                                     <div class="horizontal-link-line"></div>
                                 </a>
+                                <a href="{{ route('login')}}" title="Contact us and get support"
+                                    class="link-with-line w-inline-block">
+                                    <div class="link-text is-header">Login</div>
+                                    <div class="horizontal-link-line"></div>
+                                </a>
                             </div>
                         </div>
                     </nav>

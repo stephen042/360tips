@@ -179,7 +179,7 @@ License        :   Licensed under ThemeForest License
     --info: #17a2b8;
     --warning: #ffc107;
     --danger: #dc3545;
-    --light: #fcfcfd;
+    --light: #ddddde;
     --dark: #343a40;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
@@ -233,7 +233,7 @@ body {
     line-height: 1.5;
     color: #0d0c22;
     text-align: left;
-    background-color: #c4c4c5;
+    background-color: #ebebed;
 }
 
 .number-font {
@@ -802,11 +802,11 @@ body *::-webkit-scrollbar {
 }
 
 body *::-webkit-scrollbar-thumb {
-    background: #ced4da;
+    background: #ebebeb;
 }
 
 body *:hover::-webkit-scrollbar-thumb {
-    background: #adb5bd;
+    background: #e3e3e3;
 }
 
 @media print {
@@ -841,8 +841,8 @@ b {
 }
 
 code {
-    background: #f2f3f9;
-    border: 1px solid #eaedf1;
+    background: #d8d9de;
+    border: 1px solid #d9dadc;
     border-radius: 3px;
     padding: 3px;
 }
@@ -865,7 +865,7 @@ pre {
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f4f8fd;
+    background-color: #e8ebef;
     border-radius: 3px;
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -878,7 +878,7 @@ pre {
 }
 
 .section-nav {
-    background-color: #f8f9fa;
+    background-color: #dbdcde;
     margin: 1rem 0;
     padding: 0.5rem 1rem;
     border: 1px solid #eaedf1;
