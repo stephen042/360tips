@@ -66,7 +66,7 @@ class SubDeposit extends Component
             "transaction_amount" => $this->amount,
             "transaction_category" => 3, // check config/app.php 
             "transaction_proof" => $proofPath,
-            "transaction_ewallet" => $this->asset,
+            "transaction_asset" => $this->asset,
         ]);
 
 
