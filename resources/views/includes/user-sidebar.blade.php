@@ -25,6 +25,9 @@
                     <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('user_deposit') }}"><i class="side-menu__icon fe fe-credit-card"></i><span class="side-menu__label">Deposit</span></a>
                 </li>
                 <li class="slide">
+                    <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('user_sub_deposit') }}"><i class="side-menu__icon fe fe-credit-card"></i><span class="side-menu__label">Subscription Deposit</span></a>
+                </li>
+                <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);"><i class="side-menu__icon fe fe-database"></i><span class="side-menu__label">Plans</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">PLANS</a></li>

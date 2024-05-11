@@ -16,7 +16,7 @@ class AccountSummary extends Component
         $user_id = Auth::user()->id;
 
         $sum_withdrawal = Transactions::where('user_id', $user_id)
-            ->where('transaction_category', 1)
+            ->where('transaction_category', 2)
             ->where('transaction_status', 2)
             ->sum('transaction_amount');
 
