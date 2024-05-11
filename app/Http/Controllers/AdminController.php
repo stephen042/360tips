@@ -74,7 +74,8 @@ class AdminController extends Controller
     public function edit_user(Request $request, User $user)
     {
         if ($request->method() == 'GET') {
-            $user_data = $user->get()->first();
+
+            $user_data = $user;
 
             $status_plans = Status_plan::all();
 
