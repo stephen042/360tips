@@ -1807,55 +1807,55 @@
                                     </div>
                                     <div class="right-side-box is-t-small">
                                         <a href="{{ route('register')}}"
-                                            class="button is-price-small w-button">Pay $100</a>
+                                            class="button is-price-small w-button">Pay $500</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="one-acc-box">
                                 <div class="one-box-acc_title-small">
                                     <div class="left-side-box">
-                                        <div class="one-box-acc_tagline">Starter</div>
+                                        <div class="one-box-acc_tagline">Silver</div>
                                         <h3 class="one-box-acc-headline">$25,000</h3>
                                     </div>
                                     <div class="right-side-box is-t-small">
                                         <a href="{{ route('register')}}"
-                                            class="button is-price-small w-button">Pay $200</a>
+                                            class="button is-price-small w-button">Pay $2,000</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="one-acc-box">
                                 <div class="one-box-acc_title-small">
                                     <div class="left-side-box">
-                                        <div class="one-box-acc_tagline">Basic</div>
+                                        <div class="one-box-acc_tagline">Gold</div>
                                         <h3 class="one-box-acc-headline">$50,000</h3>
                                     </div>
                                     <div class="right-side-box is-t-small">
                                         <a href="{{ route('register')}}"
-                                            class="button is-price-small w-button">Pay $350</a>
+                                            class="button is-price-small w-button">Pay $5,000</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="one-acc-box">
                                 <div class="one-box-acc_title">
                                     <div class="left-side-box">
-                                        <div class="one-box-acc_tagline">Advanced</div>
+                                        <div class="one-box-acc_tagline">Diamond</div>
                                         <h3 class="one-box-acc-headline">$100,000</h3>
                                     </div>
                                     <div class="right-side-box">
                                         <a href="{{ route('register')}}"
-                                            class="button is-price-small w-button">Pay $550</a>
+                                            class="button is-price-small w-button">Pay $15,000</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="one-acc-box">
                                 <div class="one-box-acc_title">
                                     <div class="left-side-box">
-                                        <div class="one-box-acc_tagline">Expert</div>
-                                        <h3 class="one-box-acc-headline">$200,000</h3>
+                                        <div class="one-box-acc_tagline">VIP</div>
+                                        <h3 class="one-box-acc-headline">$800,000</h3>
                                     </div>
                                     <div class="right-side-box">
                                         <a href="{{ route('register')}}"
-                                            class="button is-price-small w-button">Pay $1,000</a>
+                                            class="button is-price-small w-button">Pay $50,000</a>
                                     </div>
                                 </div>
                             </div>
