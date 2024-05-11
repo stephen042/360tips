@@ -49,14 +49,14 @@ class SubDeposit extends Component
 
     public function sub_deposit()
     {
-
+        $this->validate();
 
         $user_id = Auth::user()->id;
         $full_name = Auth::user()->last_name . ' ' . Auth::user()->first_name;
 
         $proofPath = $this->proof->store('proof', 'public');
 
-        $this->validate();
+
 
         $result = Transactions::create([
             "user_id" => $user_id,

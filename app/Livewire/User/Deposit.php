@@ -52,9 +52,7 @@ class Deposit extends Component
 
     public function deposit()
     {
-
         $this->validate();
-
 
         $user_id = Auth::user()->id;
         $full_name = Auth::user()->last_name . ' ' . Auth::user()->first_name;
