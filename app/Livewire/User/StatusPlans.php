@@ -32,14 +32,17 @@ class StatusPlans extends Component
         $userObj = User::findOrFail($user_data->id);
 
         $latest_plan = $userObj->plans_transactions()->where('plan_transaction_status', 1)->latest()->first();
-
-        if ($data->amount < $latest_plan->plan_amount) {
-            session()->flash('error', 'You can\'t go for a lower amount plan if a higher amount is still on. Go for a bigger amount for better experience');
-            return redirect('/users/status');
-        } elseif ($data->name == $latest_plan->plan_name && $latest_plan->plan_transaction_status == 1) {
-            session()->flash('error', 'You are running on this plan currently. GO FOR A HIGHER PLAN');
-            return redirect('/users/status');
+        
+        if ($latest_plan) {
+            if ($data->amount < $latest_plan->plan_amount) {
+                session()->flash('error', 'You can\'t go for a lower amount plan if a higher amount is still on. Go for a bigger amount for better experience');
+                return redirect('/users/status');
+            } elseif ($data->name == $latest_plan->plan_name && $latest_plan->plan_transaction_status == 1) {
+                session()->flash('error', 'You are running on this plan currently. GO FOR A HIGHER PLAN');
+                return redirect('/users/status');
+            }
         }
+
 
 
         $result = Plans_Transactions::create([
