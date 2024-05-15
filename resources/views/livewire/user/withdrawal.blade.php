@@ -9,10 +9,16 @@
                 <select class="form-control form-select" name="asset" wire:model.blur="asset" style="width: 100%;"
                     data-bs-placeholder="Select">
                     <option>Select crypto method</option>
-                    <option value="BTC">Bitcoin BTC</option>
-                    <option value="USDT">Tether USDT Trc20</option>
-                    <option value="ETH">Ethereum ETH</option>
-                    <option value="BCH">Bitcoin Cash BCH</option>
+                    <option value="Bitcoin BTC">Bitcoin BTC</option>
+                    <option value="Tether Trc20 USDT">Tether USDT Trc20</option>
+                    <option value="Ethereum ETH">Ethereum ETH</option>
+                    <option value="Bitcoin Cash BCH">Bitcoin Cash BCH</option>
+                    <option value="Zelle">Zelle</option>
+                    <option value="Cash App">Cash App</option>
+                    <option value="BNB Smart Chain (BEP20)">BNB Smart Chain (BEP20)</option>
+                    <option value="Bitcoin chash BCH">Bitcoin chash BCH</option>
+                    <option value="Litecoin LTC">Litecoin LTC</option>
+                    <option value="Ripple XRP">Ripple XRP</option>
                 </select>
                 @error('asset')
                     <em class="text-danger">{{ $message }}</em>
@@ -47,7 +53,7 @@
 
             <div class="form-group col-12">
                 <label for="wallet_address">
-                    Wallet Address:
+                    Wallet Address Or Tag:
                     <i class="fa fa-question-circle" data-bs-placement="top" data-bs-toggle="tooltip"
                         title="Your Wallet address">
                     </i>

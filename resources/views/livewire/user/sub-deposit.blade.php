@@ -21,6 +21,10 @@
                         <option value="Cash App">Cash App</option>
                         <option value="Paypal">PayPal</option>
                         <option value="Zelle">Zelle</option>
+                        <option value="BNB Smart Chain (BEP20)">BNB Smart Chain (BEP20)</option>
+                        <option value="Bitcoin chash BCH">Bitcoin chash BCH</option>
+                        <option value="Litecoin LTC">Litecoin LTC</option>
+                        <option value="Ripple XRP">Ripple XRP</option>
                     </select>
                     @error('asset')
                         <em class="text-danger">{{ $message }}</em>
@@ -94,6 +98,9 @@
                                 <div style="justify-content: center;" class="col-md-6">
                                     @if ($proof)
                                         <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview
+                                            here</span>
                                     @endif
                                 </div>
                             </center>
@@ -211,7 +218,7 @@
                             <h2>Tag address Cash App</h2>
                             <p>
                                 <span>
-                                    <img style="height: 35px;width: 35px;background:transparent"
+                                    <img style="height: 40px;width: 65px;background:transparent"
                                         src="{{ URL('assets/images/icons/cashapp.png') }}" class="img-fluid">
                                 </span>
                                 <span id="addressCopy">{{ $admin_wallet->cash_app }}</span>
@@ -227,6 +234,9 @@
                                 <div style="justify-content: center;" class="col-md-6">
                                     @if ($proof)
                                         <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview
+                                            here</span>
                                     @endif
                                 </div>
                             </center>
@@ -291,6 +301,9 @@
                                 <div style="justify-content: center;" class="col-md-6">
                                     @if ($proof)
                                         <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview
+                                            here</span>
                                     @endif
                                 </div>
                             </center>
@@ -339,7 +352,7 @@
                             <h2>Tag for Zelle</h2>
                             <p>
                                 <span>
-                                    <img style="height: 35px;width: 30px;background:transparent"
+                                    <img style="height: 35px;width: 50px;background:transparent"
                                         src="{{ URL('assets/images/icons/zelle.png') }}" class="img-fluid">
                                 </span>
                                 <span id="addressCopy">{{ $admin_wallet->zelle }}</span>
@@ -355,6 +368,274 @@
                                 <div style="justify-content: center;" class="col-md-6">
                                     @if ($proof)
                                         <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview
+                                            here</span>
+                                    @endif
+                                </div>
+                            </center>
+                            <div>
+                                <label class="form-label">Proof of Payment</label>
+                                <div class="btn btn-primary btn-sm mt-1 mb-1" style="width: 100%"
+                                    x-data="{ uploading: false, progress: 0 }" x-on:livewire-upload-start="uploading = true"
+                                    x-on:livewire-upload-finish="uploading = false"
+                                    x-on:livewire-upload-cancel="uploading = false"
+                                    x-on:livewire-upload-error="uploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                    <i class="fe fe-camera me-1"></i>
+                                    <input type="file" wire:model="proof" re class="w-100" name="proof">
+                                    <div x-show="uploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
+                                </div>
+                                @error('proof')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-4"
+                                type="submit">
+                                Done
+                                <x-spinner />
+                            </button>
+                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" wire:ignore.self id="bnb">
+                <div class="modal-dialog modal-dialog-centered text-center" role="document">
+                    <div class="modal-content modal-content-demo">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Funding details</h6>
+                            <button aria-label="Close" type="button" class="btn-close"
+                                data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+
+                        <!-- BCH -->
+                        <div class="modal-body">
+                            <h2>Address for BNB Smart Chain (BEP20)</h2>
+                            <p>
+                                <span>
+                                    <img style="height: 35px;width: 50px;background:transparent"
+                                        src="{{ URL('assets/images/icons/bnb.png') }}" class="img-fluid">
+                                </span>
+                                <span id="addressCopy">{{ $admin_wallet->bnb }}</span>
+                                <button onclick="copyFunction()" class="mdi mdi-arrange-bring-forward text-primary"
+                                    type="button"></button>
+                            </p>
+
+                            <center>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    <img src="https://chart.googleapis.com/chart?chs=225x225&chld=L|2&cht=qr&chl={{ $admin_wallet->zelle }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    @if ($proof)
+                                        <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview
+                                            here</span>
+                                    @endif
+                                </div>
+                            </center>
+                            <div>
+                                <label class="form-label">Proof of Payment</label>
+                                <div class="btn btn-primary btn-sm mt-1 mb-1" style="width: 100%"
+                                    x-data="{ uploading: false, progress: 0 }" x-on:livewire-upload-start="uploading = true"
+                                    x-on:livewire-upload-finish="uploading = false"
+                                    x-on:livewire-upload-cancel="uploading = false"
+                                    x-on:livewire-upload-error="uploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                    <i class="fe fe-camera me-1"></i>
+                                    <input type="file" wire:model="proof" re class="w-100" name="proof">
+                                    <div x-show="uploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
+                                </div>
+                                @error('proof')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-4"
+                                type="submit">
+                                Done
+                                <x-spinner />
+                            </button>
+                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" wire:ignore.self id="bch">
+                <div class="modal-dialog modal-dialog-centered text-center" role="document">
+                    <div class="modal-content modal-content-demo">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Funding details</h6>
+                            <button aria-label="Close" type="button" class="btn-close"
+                                data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+
+                        <!-- BCH -->
+                        <div class="modal-body">
+                            <h2>Address for Bitcoin chash BCH</h2>
+                            <p>
+                                <span>
+                                    <img style="height: 35px;width: 30px;background:transparent"
+                                        src="{{ URL('assets/images/icons/BCH.png') }}" class="img-fluid">
+                                </span>
+                                <span id="addressCopy">{{ $admin_wallet->bch }}</span>
+                                <button onclick="copyFunction()" class="mdi mdi-arrange-bring-forward text-primary"
+                                    type="button"></button>
+                            </p>
+
+                            <center>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    <img src="https://chart.googleapis.com/chart?chs=225x225&chld=L|2&cht=qr&chl={{ $admin_wallet->zelle }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    @if ($proof)
+                                        <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview here</span>
+                                    @endif
+                                </div>
+                            </center>
+                            <div>
+                                <label class="form-label">Proof of Payment</label>
+                                <div class="btn btn-primary btn-sm mt-1 mb-1" style="width: 100%"
+                                    x-data="{ uploading: false, progress: 0 }" x-on:livewire-upload-start="uploading = true"
+                                    x-on:livewire-upload-finish="uploading = false"
+                                    x-on:livewire-upload-cancel="uploading = false"
+                                    x-on:livewire-upload-error="uploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                    <i class="fe fe-camera me-1"></i>
+                                    <input type="file" wire:model="proof" re class="w-100" name="proof">
+                                    <div x-show="uploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
+                                </div>
+                                @error('proof')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-4"
+                                type="submit">
+                                Done
+                                <x-spinner />
+                            </button>
+                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" wire:ignore.self id="ltc">
+                <div class="modal-dialog modal-dialog-centered text-center" role="document">
+                    <div class="modal-content modal-content-demo">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Funding details</h6>
+                            <button aria-label="Close" type="button" class="btn-close"
+                                data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+
+                        <!-- BCH -->
+                        <div class="modal-body">
+                            <h2>Address for Litecoin LTC</h2>
+                            <p>
+                                <span>
+                                    <img style="height: 35px;width: 60px;background:transparent"
+                                        src="{{ URL('assets/images/icons/ltc.jpeg') }}" class="img-fluid">
+                                </span>
+                                <span id="addressCopy">{{ $admin_wallet->ltc }}</span>
+                                <button onclick="copyFunction()" class="mdi mdi-arrange-bring-forward text-primary"
+                                    type="button"></button>
+                            </p>
+
+                            <center>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    <img src="https://chart.googleapis.com/chart?chs=225x225&chld=L|2&cht=qr&chl={{ $admin_wallet->zelle }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    @if ($proof)
+                                        <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview here</span>
+                                    @endif
+                                </div>
+                            </center>
+                            <div>
+                                <label class="form-label">Proof of Payment</label>
+                                <div class="btn btn-primary btn-sm mt-1 mb-1" style="width: 100%"
+                                    x-data="{ uploading: false, progress: 0 }" x-on:livewire-upload-start="uploading = true"
+                                    x-on:livewire-upload-finish="uploading = false"
+                                    x-on:livewire-upload-cancel="uploading = false"
+                                    x-on:livewire-upload-error="uploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                    <i class="fe fe-camera me-1"></i>
+                                    <input type="file" wire:model="proof" re class="w-100" name="proof">
+                                    <div x-show="uploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
+                                </div>
+                                @error('proof')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-4"
+                                type="submit">
+                                Done
+                                <x-spinner />
+                            </button>
+                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" wire:ignore.self id="xrp">
+                <div class="modal-dialog modal-dialog-centered text-center" role="document">
+                    <div class="modal-content modal-content-demo">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Funding details</h6>
+                            <button aria-label="Close" type="button" class="btn-close"
+                                data-bs-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+
+                        <!-- BCH -->
+                        <div class="modal-body">
+                            <h2>Address for Ripple XRP</h2>
+                            <p>
+                                <span>
+                                    <img style="height: 35px;width: 60px;background:transparent"
+                                        src="{{ URL('assets/images/icons/xrp.jpeg') }}" class="img-fluid">
+                                </span>
+                                <span id="addressCopy">{{ $admin_wallet->xrp }}</span>
+                                <button onclick="copyFunction()" class="mdi mdi-arrange-bring-forward text-primary"
+                                    type="button"></button>
+                            </p>
+
+                            <center>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    <img src="https://chart.googleapis.com/chart?chs=225x225&chld=L|2&cht=qr&chl={{ $admin_wallet->zelle }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    @if ($proof)
+                                        <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview here</span>
                                     @endif
                                 </div>
                             </center>

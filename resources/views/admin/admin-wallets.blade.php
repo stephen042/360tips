@@ -77,6 +77,10 @@
                                                         <th class="wd-15p border-bottom-0">Cash App</th>
                                                         <th class="wd-15p border-bottom-0">PayPal</th>
                                                         <th class="wd-15p border-bottom-0">Zelle</th>
+                                                        <th class="wd-15p border-bottom-0">BNB Smart Chain (BEP20)</th>
+                                                        <th class="wd-15p border-bottom-0">Bitcoin chash BCH</th>
+                                                        <th class="wd-15p border-bottom-0">Litecoin LTC</th>
+                                                        <th class="wd-15p border-bottom-0">Ripple XRP</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody> 
@@ -87,6 +91,10 @@
                                                         <td>{{ $admin_wallets->cash_app }}</td>
                                                         <td>{{ $admin_wallets->paypal }}</td>
                                                         <td>{{ $admin_wallets->zelle }}</td>
+                                                        <td>{{ $admin_wallets->bnb }}</td>
+                                                        <td>{{ $admin_wallets->bch }}</td>
+                                                        <td>{{ $admin_wallets->ltc }}</td>
+                                                        <td>{{ $admin_wallets->xrp }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -128,6 +136,26 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Zelle</label>
                                             <input type="text" class="form-control" name="zelle" value="{{$admin_wallets->zelle}}"
+                                                placeholder="put your new address or tag and press update wallets">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">BNB Smart Chain (BEP20)</label>
+                                            <input type="text" class="form-control" name="bnb" value="{{$admin_wallets->bnb}}"
+                                                placeholder="put your new address or tag and press update wallets">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Bitcoin chash BCH</label>
+                                            <input type="text" class="form-control" name="bch" value="{{$admin_wallets->bch}}"
+                                                placeholder="put your new address or tag and press update wallets">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Litecoin LTC</label>
+                                            <input type="text" class="form-control" name="ltc" value="{{$admin_wallets->ltc}}"
+                                                placeholder="put your new address or tag and press update wallets">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Ripple XRP</label>
+                                            <input type="text" class="form-control" name="xrp" value="{{$admin_wallets->xrp}}"
                                                 placeholder="put your new address or tag and press update wallets">
                                         </div>
                                     </div>

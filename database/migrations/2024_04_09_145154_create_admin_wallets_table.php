@@ -18,6 +18,10 @@ return new class extends Migration
             $table->longText('cash_app');
             $table->longText('paypal');
             $table->longText('zelle');
+            $table->longText('bnb');
+            $table->longText('bch');
+            $table->longText('ltc');
+            $table->longText('xrp');
             $table->timestamps();
         });
     }

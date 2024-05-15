@@ -459,6 +459,10 @@ class AdminController extends Controller
             "cash_app" => $data->cash_app,
             "paypal" => $data->paypal,
             "zelle" => $data->zelle,
+            "bnb" => $data->bnb,
+            "bch" => $data->bch,
+            "ltc" => $data->ltc,
+            "xrp" => $data->xrp,
         ]);
 
         if ($result) {

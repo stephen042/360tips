@@ -41,6 +41,14 @@ class SubDeposit extends Component
             return $this->modalName = "#paypal";
         } elseif ($this->asset == "Zelle") {
             return $this->modalName = "#zelle";
+        } elseif ($this->asset == "BNB Smart Chain (BEP20)") {
+            return $this->modalName = "#bnb";
+        } elseif ($this->asset == "Bitcoin chash BCH") {
+            return $this->modalName = "#bch";
+        } elseif ($this->asset == "Litecoin LTC") {
+            return $this->modalName = "#ltc";
+        } elseif ($this->asset == "Ripple XRP") {
+            return $this->modalName = "#xrp";
         }
     }
 
