@@ -13,14 +13,14 @@
     <meta property="og:description"
         content="Unlock your trading potential with our comprehensive solutions designed to support traders. Explore our expert guidance and lucrative opportunities to propel your trading career.">
     <meta property="og:type" content="website">
-    <link href="{{ asset('home-assets/assets/fav/favicon.png') }}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{ asset('home-assets/assets/fav/favicon-apple-touch.png') }}" rel="apple-touch-icon">
-    <link type="text/css" href="{{ asset('home-assets/assets/css/styles.css?ver=1') }}" rel="stylesheet">
-    <script src="{{ asset('home-assets/ajax/libs/webfont/1.6.26/webfont.js') }}"></script>
-    <script async="" src="{{ asset('home-assets/gtag/js?id=G-H20B6QYEP7') }}"></script>
-    <script src="{{ asset('home-assets/assets/js/jquery-3.7.1.min.js') }}" rel="preload"></script>
-    <script async="" src="{{ asset('home-assets/assets/js/Fundingtraders.js?ver=1715243159') }}" rel="preload"></script>
-    <script async="" src="{{ asset('home-assets/assets/js/cmsslider.min.js') }}"></script>
+    <link href="{{ URL('home-assets/assets/fav/favicon.png') }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ URL('home-assets/assets/fav/favicon-apple-touch.png') }}" rel="apple-touch-icon">
+    <link type="text/css" href="{{ URL('home-assets/assets/css/styles.css?ver=1') }}" rel="stylesheet">
+    <script src="{{ URL('home-assets/ajax/libs/webfont/1.6.26/webfont.js') }}"></script>
+    <script async="" src="{{ URL('home-assets/gtag/js?id=G-H20B6QYEP7') }}"></script>
+    <script src="{{ URL('home-assets/assets/js/jquery-3.7.1.min.js') }}" rel="preload"></script>
+    <script async="" src="{{ URL('home-assets/assets/js/Fundingtraders.js?ver=1715243159') }}" rel="preload"></script>
+    <script async="" src="{{ URL('home-assets/assets/js/cmsslider.min.js') }}"></script>
     <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
 
@@ -40,9 +40,9 @@
     </script>
 
     <noscript><img height="1" width="1" style="display:none"
-            src="{{ asset('home-assets/tr?id=3616614748582193&ev=PageView&noscript=1') }}"></noscript>
+            src="{{ URL('home-assets/tr?id=3616614748582193&ev=PageView&noscript=1') }}"></noscript>
 
-    <script src="{{ asset('home-assets/tapfiliate.js') }}" type="text/javascript" async=""></script>
+    <script src="{{ URL('home-assets/tapfiliate.js') }}" type="text/javascript" async=""></script>
 
     <style>
         :root {
