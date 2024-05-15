@@ -42,8 +42,8 @@
                     </nav>
                 </div>
                 <div class="nuv-btn_wrap">
-                    <a href="{{ route('register')}}" class="button is-header w-button">Get
-                        Started</a>
+                    <a href="{{ route('login')}}" class="button is-header w-button">
+                        Login</a>
                     <div class="menu-button w-nav-button">
                         <div class="burger-1">
                             <div class="b2-bar1"></div>
