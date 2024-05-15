@@ -37,6 +37,11 @@
                                     <div class="link-text is-header">Login</div>
                                     <div class="horizontal-link-line"></div>
                                 </a>
+                                <a href="{{ route('register')}}" title="Contact us and get support"
+                                    class="link-with-line w-inline-block">
+                                    <div class="link-text is-header">Register</div>
+                                    <div class="horizontal-link-line"></div>
+                                </a>
                             </div>
                         </div>
                     </nav>
