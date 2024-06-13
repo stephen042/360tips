@@ -2,6 +2,7 @@
 
 namespace App\Livewire\User;
 
+use App\Models\User;
 use App\Mail\AppMail;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -27,12 +28,12 @@ class Withdrawal extends Component
     {
         $this->validate();
 
-        $current_bal = Auth::user()->balance;
+        $current_bal = Auth::user()->earnings_balance;
         $user_id = Auth::user()->id;
         $full_name = Auth::user()->last_name . ' ' . Auth::user()->first_name;
 
         if ($current_bal < $this->amount) {
-            session()->flash('error', 'insufficient Funds');
+            session()->flash('error', 'insufficient Earning Funds');
             return $this->redirect('/users/withdraw');
         }
 
@@ -49,6 +50,11 @@ class Withdrawal extends Component
 
         
         if ($result) {
+            $new_balance =  $current_bal - $this->amount;
+
+            User::where('id',"$user_id")->update([
+                "earnings_balance" => "$new_balance"
+            ]);
 
             $amount = $this->amount;
             session()->flash('success', 'Your withdrawal request was Submitted successfully');

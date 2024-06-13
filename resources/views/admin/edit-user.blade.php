@@ -76,9 +76,21 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-order">
-                                            <h6 class="mb-2">Balance</h6>
+                                            <h6 class="mb-2">Balance </h6>
                                             <h2 class="text-end "><i
-                                                    class="mdi mdi-account-multiple icon-size float-start text-primary text-primary-shadow"></i><span>${{ $user_data->balance }}</span>
+                                                    class="fas fa-money-check-alt icon-size float-start text-primary text-primary-shadow"></i><span>${{ $user_data->balance }}</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- COL END -->
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-order">
+                                            <h6 class="mb-2">Earnings Balance </h6>
+                                            <h2 class="text-end "><i
+                                                    class="fas fa-money-check-alt icon-size float-start text-primary text-primary-shadow"></i><span>${{ $user_data->earnings_balance }}</span>
                                             </h2>
                                         </div>
                                     </div>

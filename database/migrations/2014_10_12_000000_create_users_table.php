@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->integer('balance');
+            $table->integer('earnings_balance')->default(0);
             $table->integer('sub_balance');
             $table->string('password');
             $table->date('date_of_birth')->nullable();

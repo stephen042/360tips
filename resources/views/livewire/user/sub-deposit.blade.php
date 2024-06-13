@@ -42,7 +42,7 @@
                     @enderror
                     <span class="input-group-text mt-1" id="validatedInputGroupPrepend">
                         <span class="">Current balance:</span>
-                        @if (auth()->user()->sub_balance <= 10)
+                        @if (auth()->user()->sub_balance <= 100)
                             <span class="text-danger ms-1">
                                 <i class="fa fa-dollar"></i>
                                 {{ number_format(auth()->user()->sub_balance, 2) }}

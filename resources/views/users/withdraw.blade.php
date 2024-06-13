@@ -59,7 +59,7 @@
                         <!-- PAGE-HEADER -->
                         <div class="page-header">
                             <div>
-                                <h1 class="page-title">Withdrawal | Withdraw Your Profit -$ </h1>
+                                <h1 class="page-title">Withdrawal | Withdraw Your Earnings -$ </h1>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item "><a href="{{ route('user_dashboard') }}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">withdraw</li>

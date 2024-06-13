@@ -35,16 +35,16 @@
                     <em class="text-danger">{{ $message }}</em>
                 @enderror
                 <span class="input-group-text mt-1" id="validatedInputGroupPrepend">
-                    <span class="">Current balance:</span>
-                    @if (auth()->user()->balance <= 10)
+                    <span class="">Current Earnings balance:</span>
+                    @if (auth()->user()->earnings_balance <= 100)
                         <span class="text-danger ms-1">
                             <i class="fa fa-dollar"></i>
-                            {{ number_format(auth()->user()->balance, 2) }}
+                            {{ number_format(auth()->user()->earnings_balance, 2) }}
                         </span>
                     @else
                         <span class="text-success ms-1">
                             <i class="fa fa-dollar"></i>
-                            {{ number_format(auth()->user()->balance, 2) }}
+                            {{ number_format(auth()->user()->earnings_balance, 2) }}
                         </span>
                     @endif
                 </span>
@@ -58,7 +58,7 @@
                         title="Your Wallet address">
                     </i>
                 </label>
-                <input type="text" class="form-control" value="" wire:model.live="ewallet_address"
+                <input type="text" class="form-control" value="" wire:model.blur="ewallet_address"
                     placeholder="Your crypto wallet address to receive payment">
                 @error('ewallet_address')
                     <em class="text-danger">{{ $message }}</em>

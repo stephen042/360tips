@@ -61,7 +61,7 @@ class EditTrade extends Component
                 return Redirect::route('edit_trade', [$user_id, $trade_id]);
             }
 
-            $new_bal = $this->user->balance + $this->profit;
+            $new_earnings_bal = $this->user->earnings_balance + $this->profit;
 
             $result = Trades::where("user_id", $user_id)
                 ->where("trade_id", $trade_uid)
@@ -73,7 +73,7 @@ class EditTrade extends Component
             if ($result) {
 
                 User::where("id", $user_id)
-                    ->update(["balance" => $new_bal]);
+                    ->update(["earnings_balance" => $new_earnings_bal ]);
 
                 session()->flash('success', 'Trade completed successfully');
 

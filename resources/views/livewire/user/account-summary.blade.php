@@ -35,6 +35,12 @@
             </div>
             <div class="card-body">
                 <p class="m-0">
+                    <span><i class="bi bi-wallet2 h4"></i></span>
+                    Total Earnings: <span class="h4 text-bold">$ {{ number_format($user_data->earnings_balance, 2) }}</span>
+                </p>
+            </div>
+            <div class="card-body">
+                <p class="m-0">
                     <span><i class="bi bi-cash-stack h4"></i></span>
                     Total Subscription Bal: <span class="h4 text-bold">$
                         {{ number_format($user_data->sub_balance, 2) }}</span>
