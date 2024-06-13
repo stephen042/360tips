@@ -17,6 +17,10 @@ class EditUserAccount extends Component
 
     public $debit_bal_amount;
 
+    public $credit_earnings_bal_amount;
+
+    public $debit_earnings_bal_amount;
+
     public $credit_sub_bal_amount;
 
     public $debit_sub_bal_amount;
@@ -67,6 +71,58 @@ class EditUserAccount extends Component
 
         if ($result) {
             session()->flash('success', 'Customer Debited successfully');
+
+            return Redirect::route('edit_user', [$user_id]);
+        }
+
+        session()->flash('error', 'An error occurred try again later');
+
+        return Redirect::route('edit_user', [$user_id]);
+    }
+
+    public function credit_earnings_balance()
+    {
+
+        $this->validate([
+            "credit_earnings_bal_amount" => 'required',
+        ]);
+
+        $user_id = $this->user_data->id;
+
+        $new_balance = $this->user_data->earnings_balance + $this->credit_earnings_bal_amount;
+
+        $result = User::where("id",$user_id)->update([
+            "earnings_balance" => $new_balance,
+        ]);
+
+        if ($result) {
+            session()->flash('success', 'Customer Earnings Balance Credited successfully');
+
+            return Redirect::route('edit_user', [$user_id]);
+        }
+
+        session()->flash('error', 'An error occurred try again later');
+
+        return Redirect::route('edit_user', [$user_id]);
+    }
+
+    public function debit_earnings_balance()
+    {
+        
+        $this->validate([
+            "debit_earnings_bal_amount" => 'required',
+        ]);
+
+        $user_id = $this->user_data->id;
+
+        $new_balance = $this->user_data->earnings_balance - $this->debit_earnings_bal_amount;
+
+        $result = User::where("id",$user_id)->update([
+            "earnings_balance" => $new_balance,
+        ]);
+
+        if ($result) {
+            session()->flash('success', 'Customer Earnings Debited successfully');
 
             return Redirect::route('edit_user', [$user_id]);
         }

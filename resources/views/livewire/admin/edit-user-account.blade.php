@@ -5,10 +5,10 @@
             <div class="card-body">
                 <form wire:submit="credit_balance">
                     <div class="form-group">
-                        <label class="form-label">Credit user Manually</label>
+                        <label class="form-label">Credit user Balance Manually</label>
                         <div class="input-group">
-                            <input type="number" wire:model.live="credit_bal_amount" class="form-control form-control-sm"
-                                placeholder="Credit User Balance">
+                            <input type="number" wire:model.live="credit_bal_amount"
+                                class="form-control form-control-sm" placeholder="Credit User Balance">
                             <span class="input-group-btn ms-0">
                                 <button class="btn btn-sm btn-success please-wait-btn" type="submit">
                                     credit
@@ -16,16 +16,16 @@
                             </span>
                         </div>
                         @error('credit_bal_amount')
-                            <em class="text-danger">{{ $message }}</em>
+                        <em class="text-danger">{{ $message }}</em>
                         @enderror
                     </div>
                 </form>
                 <form wire:submit="debit_balance">
                     <div class="form-group">
-                        <label class="form-label">Debit user Manually</label>
+                        <label class="form-label">Debit user Balance Manually</label>
                         <div class="input-group">
-                            <input type="number" wire:model.live="debit_bal_amount"
-                                class="form-control form-control-sm" placeholder="Debit User Balance">
+                            <input type="number" wire:model.live="debit_bal_amount" class="form-control form-control-sm"
+                                placeholder="Debit User Balance">
                             <span class="input-group-btn ms-0">
                                 <button class="btn btn-sm btn-danger please-wait-btn" type="submit">
                                     Debit
@@ -33,7 +33,48 @@
                             </span>
                         </div>
                         @error('debit_bal_amount')
-                            <em class="text-danger">{{ $message }}</em>
+                        <em class="text-danger">{{ $message }}</em>
+                        @enderror
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- COL END -->
+    <!-- COL START -->
+    <div class="col-md-12  col-xl-4">
+        <div class="card">
+            <div class="card-body">
+                <form wire:submit="credit_earnings_balance">
+                    <div class="form-group">
+                        <label class="form-label">Credit user Earnings balance Manually</label>
+                        <div class="input-group">
+                            <input type="number" wire:model.live="credit_earnings_bal_amount"
+                                class="form-control form-control-sm" placeholder="Credit User earings Funds">
+                            <span class="input-group-btn ms-0">
+                                <button class="btn btn-sm btn-success please-wait-btn" type="submit">
+                                    credit
+                                </button>
+                            </span>
+                        </div>
+                        @error('credit_earnings_bal_amount')
+                        <em class="text-danger">{{ $message }}</em>
+                        @enderror
+                    </div>
+                </form>
+                <form wire:submit="debit_earnings_balance">
+                    <div class="form-group">
+                        <label class="form-label">Debit user Earnings balance Manually</label>
+                        <div class="input-group">
+                            <input type="number" wire:model.live="debit_earnings_bal_amount"
+                                class="form-control form-control-sm" placeholder="Debit User earings Funds">
+                            <span class="input-group-btn ms-0">
+                                <button class="btn btn-sm btn-danger please-wait-btn" type="submit">
+                                    Debit
+                                </button>
+                            </span>
+                        </div>
+                        @error('debit_earnings_bal_amount')
+                        <em class="text-danger">{{ $message }}</em>
                         @enderror
                     </div>
                 </form>
@@ -57,7 +98,7 @@
                             </span>
                         </div>
                         @error('credit_sub_bal_amount')
-                            <em class="text-danger">{{ $message }}</em>
+                        <em class="text-danger">{{ $message }}</em>
                         @enderror
                     </div>
                 </form>
@@ -74,7 +115,7 @@
                             </span>
                         </div>
                         @error('debit_sub_bal_amount')
-                            <em class="text-danger">{{ $message }}</em>
+                        <em class="text-danger">{{ $message }}</em>
                         @enderror
                     </div>
                 </form>
@@ -93,7 +134,7 @@
                                 <option>Select New account status</option>
                                 <option value="None">None</option>
                                 @foreach ($status_plans as $status_plan)
-                                    <option value="{{ $status_plan->name }}">{{ $status_plan->name }}</option>
+                                <option value="{{ $status_plan->name }}">{{ $status_plan->name }}</option>
                                 @endforeach
                             </select>
                             <span class="input-group-btn ms-0">
@@ -103,7 +144,7 @@
                             </span>
                         </div>
                         @error('change_status_data')
-                            <em class="text-danger">{{ $message }}</em>
+                        <em class="text-danger">{{ $message }}</em>
                         @enderror
                     </div>
                 </form>
