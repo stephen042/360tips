@@ -23,13 +23,25 @@ class SubDeposit extends Component
 
     public $modalName;
 
-    #[Rule('required', message: 'Please put Amount')]
-    #[Rule('min:3', message: 'Amount should not be less than $100')]
+    // #[Rule('required', message: 'Please put Amount')]
+    // #[Rule('min:500', message: 'Amount should not be less than $500')]
+    // public $amount;
+
     public $amount;
 
+    protected $rules = [
+        'amount' => ['required', 'numeric', 'min:500'],
+    ];
 
-    public function updated()
+    protected $messages = [
+        'amount.required' => 'Please input amount',
+        'amount.min' => 'Amount should be at least $500',
+    ];
+
+
+    public function updated($amount)
     {
+        $this->validateOnly($amount);
 
         if ($this->asset == "Bitcoin") {
             return $this->modalName = "#bitcoin";

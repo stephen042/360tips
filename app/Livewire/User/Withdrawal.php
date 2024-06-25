@@ -17,9 +17,26 @@ class Withdrawal extends Component
     #[Rule('required', message: 'Please select payment method')]
     public $asset;
 
-    #[Rule('required', message: 'Please Input amount')]
-    #[Rule('min:3', message: 'Amount should be at least $100')]
+    // #[Rule('required', message: 'Please Input amount')]
+    // #[Rule('min:500', message: 'Amount should be at least $500')]
+    // public $amount;
+
     public $amount;
+
+    protected $rules = [
+        'amount' => ['required', 'numeric', 'min:500'],
+    ];
+
+    protected $messages = [
+        'amount.required' => 'Please input amount',
+        'amount.min' => 'Amount should be at least $500',
+    ];
+
+    public function updated($amount)
+    {
+        $this->validateOnly($amount);
+    }
+
 
     #[Rule('required', message: 'Please Input Your receiving wallet address')]
     public $ewallet_address;
