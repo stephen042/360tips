@@ -19,8 +19,8 @@
                         <option value="Bitcoin">Bitcoin BTC</option>
                         <option value="USDT Trc20">Tether USDT Trc20</option>
                         <option value="Cash App">Cash App</option>
-                        <option value="Paypal">PayPal</option>
-                        <option value="Zelle">Zelle</option>
+                        {{-- <option value="Paypal">PayPal</option> --}}
+                        {{-- <option value="Zelle">Zelle</option> --}}
                         <option value="BNB Smart Chain (BEP20)">BNB Smart Chain (BEP20)</option>
                         <option value="Bitcoin chash BCH">Bitcoin chash BCH</option>
                         <option value="Litecoin LTC">Litecoin LTC</option>
