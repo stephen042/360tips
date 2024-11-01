@@ -443,36 +443,39 @@ class AdminController extends Controller
 
     public function admin_wallets(Request $request)
     {
-        if ($request->method() == 'GET') {
-
+        if ($request->isMethod('GET')) {
             return view("admin.admin-wallets", [
-                "admin_wallets" => Admin_wallets::get()->first(),
+                "admin_wallets" => Admin_wallets::first(),
                 "admin_data" => Auth::user(),
             ]);
         }
 
-        $data = (object) $request->all();
+        // Default value logic
+        $walletFields = [
+            'btc',
+            'usdt',
+            'cash_app',
+            'paypal',
+            'zelle',
+            'bnb',
+            'bch',
+            'ltc',
+            'xrp'
+        ];
 
-        $result = Admin_wallets::where("id", 1)->update([
-            "btc" => $data->btc,
-            "usdt" => $data->usdt,
-            "cash_app" => $data->cash_app,
-            "paypal" => $data->paypal,
-            "zelle" => $data->zelle,
-            "bnb" => $data->bnb,
-            "bch" => $data->bch,
-            "ltc" => $data->ltc,
-            "xrp" => $data->xrp,
-        ]);
+        $data = [];
+        foreach ($walletFields as $field) {
+            $data[$field] = $request->input($field) ?: 'Wallet not available';
+        }
+
+        $result = Admin_wallets::where("id", 1)->update($data);
 
         if ($result) {
             session()->flash('success', 'Changes made successfully');
-
             return redirect()->route('admin_wallets');
         }
 
-        session()->flash('error', 'An error occurred please try again later');
-
+        session()->flash('error', 'An error occurred, please try again later');
         return redirect()->route('admin_wallets');
     }
 

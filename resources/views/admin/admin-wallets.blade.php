@@ -35,26 +35,26 @@
 
                         <center class="mt-5">
                             @if (session()->has('error'))
-                                <div class="alert alert-danger alert-dismissible fade show w-80" role="alert">
-                                    <span class="alert-inner--icon"><i class="fe fe-slash"></i></span>
-                                    <span class="alert-inner--text"><strong>error!</strong>
-                                        {{ session('error') }}
-                                    </span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-danger alert-dismissible fade show w-80" role="alert">
+                                <span class="alert-inner--icon"><i class="fe fe-slash"></i></span>
+                                <span class="alert-inner--text"><strong>error!</strong>
+                                    {{ session('error') }}
+                                </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             @endif
                             @if (session()->has('success'))
-                                <div class="alert alert-success alert-dismissible fade show w-80" role="alert">
-                                    <span class="alert-inner--icon"><i class="fe fe-thumbs-up"></i></span>
-                                    <span class="alert-inner--text"><strong>Success!</strong>
-                                        {{ session('success') }}
-                                    </span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-success alert-dismissible fade show w-80" role="alert">
+                                <span class="alert-inner--icon"><i class="fe fe-thumbs-up"></i></span>
+                                <span class="alert-inner--text"><strong>Success!</strong>
+                                    {{ session('success') }}
+                                </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             @endif
                         </center>
 
@@ -83,7 +83,7 @@
                                                         <th class="wd-15p border-bottom-0">Ripple XRP</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody> 
+                                                <tbody>
                                                     <tr>
                                                         <td>{{ $admin_wallets->id }}</td>
                                                         <td>{{ $admin_wallets->btc }}</td>
@@ -113,51 +113,17 @@
                                 <form action="{{ route('admin_wallets_post') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
+                                        @foreach(['btc' => 'Bitcoin BTC', 'usdt' => 'USDT Trc20', 'cash_app' => 'Cash
+                                        App', 'paypal' => 'PayPal', 'zelle' => 'Zelle', 'bnb' => 'BNB Smart Chain
+                                        (BEP20)', 'bch' => 'Bitcoin Cash BCH', 'ltc' => 'Litecoin LTC', 'xrp' => 'Ripple
+                                        XRP'] as $field => $label)
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Bitcoin BTC</label>
-                                            <input type="text" class="form-control" name="btc" value="{{$admin_wallets->btc}}"
+                                            <label for="{{ $field }}">{{ $label }}</label>
+                                            <input type="text" class="form-control" name="{{ $field }}"
+                                                value="{{ $admin_wallets->$field }}"
                                                 placeholder="put your new address or tag and press update wallets">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">USDT Trc20</label>
-                                            <input type="text" class="form-control" name="usdt" value="{{$admin_wallets->usdt}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Cash App </label>
-                                            <input type="text" class="form-control" name="cash_app" value="{{$admin_wallets->cash_app}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">PayPal</label>
-                                            <input type="text" class="form-control" name="paypal" value="{{$admin_wallets->paypal}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Zelle</label>
-                                            <input type="text" class="form-control" name="zelle" value="{{$admin_wallets->zelle}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">BNB Smart Chain (BEP20)</label>
-                                            <input type="text" class="form-control" name="bnb" value="{{$admin_wallets->bnb}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Bitcoin chash BCH</label>
-                                            <input type="text" class="form-control" name="bch" value="{{$admin_wallets->bch}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Litecoin LTC</label>
-                                            <input type="text" class="form-control" name="ltc" value="{{$admin_wallets->ltc}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Ripple XRP</label>
-                                            <input type="text" class="form-control" name="xrp" value="{{$admin_wallets->xrp}}"
-                                                placeholder="put your new address or tag and press update wallets">
-                                        </div>
+                                        @endforeach
                                     </div>
                                     <div class="card-footer text-end">
                                         <button class="btn btn-success please-wait-btn" type="submit">

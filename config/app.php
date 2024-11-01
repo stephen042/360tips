@@ -186,7 +186,7 @@ return [
     ])->toArray(),
 
     // app
-    'Admin_email' => 'support@360xtips.click',
+    'Admin_email' => 'support@360xtip.click',
     'trade_status' => [1 => 'Trade on',  2 => 'Loss', 3 => 'Profit'],
     'stock_stakes_status' => [1 => 'Trade on',  2 => 'Loss', 3 => 'Profit'],
     'transaction_category' => [1 => 'Deposit', 2 => 'Withdrawal', 3 => 'Sub Deposit'],

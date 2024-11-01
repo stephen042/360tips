@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Jobs\NotificationJob;
 use App\Models\Plans_Transactions;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Console\Scheduling\Schedule;
@@ -16,30 +17,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->call(function () {
-            $user_data = Auth::user();
-            
-            $userObj = User::findOrFail($user_data->id);
-
-            $plans = $userObj->plans_transactions()
-            ->where("plan_transaction_status",1)->get();
+        $schedule->command('app:plans-auto-complete')->hourly();
         
-            foreach ($plans as $plan) {
-                // Get the duration of the plan from the database
-                $durationInDays = $plan->plan_duration;
-        
-                // Calculate the date to compare based on the plan's duration
-                $compareDate = Carbon::now()->subDays(Carbon::parse($durationInDays)->day);
-        
-                // Check if the plan's creation date is before or equal to the compare date
-                if ($plan->created_at <= $compareDate) {
-                    // Update the plan's status to completed
-                    $plan->update(['plan_transaction_status' => 2]);
-                }
-            }
-        })->hourly();
-        
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('app:notifications-auto-delete')->daily();
+        // $schedule->call(new NotificationJob())->everyFiveMinutes();
     }
 
     /**
