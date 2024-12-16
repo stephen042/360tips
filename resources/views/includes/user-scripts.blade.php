@@ -95,4 +95,5 @@
             });
         });
     </script>
-    <script src="//code.jivosite.com/widget/HNIieUNBnk" async></script>
+    {{-- chatWay  --}}
+    <script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=pwliiLBGViHa"></script>
