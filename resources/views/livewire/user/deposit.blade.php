@@ -17,6 +17,7 @@
                         data-bs-placeholder="Select" required>
                         <option>Select crypto method</option>
                         <option value="Bitcoin">Bitcoin BTC</option>
+                        <option value="Ethereum">Ethereum ETH</option>
                         <option value="USDT Trc20">Tether USDT Trc20</option>
                         <option value="Cash App">Cash App</option>
                         {{-- <option value="Paypal">PayPal</option> --}}
@@ -85,7 +86,7 @@
                             <h2>wallet address Bitcoin:</h2>
                             <p>
                                 <i class="payment payment-bitcoin-dark"></i>
-                                <span id="addressCopy">{{ $admin_wallet->btc }}</span>
+                                <span id="addressCopy">{{ $admin_wallet->btc }}</span> 
                                 <button onclick="copyFunction()" class="mdi mdi-arrange-bring-forward text-primary"
                                     type="button"></button>
                             </p>
@@ -93,6 +94,72 @@
                             <center>
                                 <div style="justify-content: center;" class="col-md-6">
                                     <img src="https://chart.googleapis.com/chart?chs=225x225&chld=L|2&cht=qr&chl={{ $admin_wallet->btc }}"
+                                        alt="" class="img-fluid">
+                                </div>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    @if ($proof)
+                                        <img class="img-fluid" src="{{ $proof->temporaryUrl() }}">
+                                    @else
+                                        <span class="text-warning">Please wait for your Uploaded image preview
+                                            here</span>
+                                    @endif
+                                </div>
+                            </center>
+                            <div>
+                                <label class="form-label">Proof of Payment</label>
+                                <div class="btn btn-primary btn-sm mt-1 mb-1" style="width: 100%"
+                                    x-data="{ uploading: false, progress: 0 }" x-on:livewire-upload-start="uploading = true"
+                                    x-on:livewire-upload-finish="uploading = false"
+                                    x-on:livewire-upload-cancel="uploading = false"
+                                    x-on:livewire-upload-error="uploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress">
+                                    <i class="fe fe-camera me-1"></i>
+                                    <input type="file" wire:model="proof" accept="image/png, image/jpeg"
+                                        class="w-100" name="proof">
+                                    <div x-show="uploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
+                                </div>
+                                @error('proof')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-4"
+                                type="submit">
+                                Done
+                                <x-spinner />
+                            </button>
+                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" wire:ignore.self id="ethereum">
+                <div class="modal-dialog modal-dialog-centered text-center" role="document">
+                    <div class="modal-content modal-content-demo">
+                        <div class="modal-header">
+                            <h6 class="modal-title">Funding details</h6>
+                            <button aria-label="Close" type="button" class="btn-close" data-bs-dismiss="modal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body" id="BTC">
+                            <h2>wallet address Ethereum:</h2>
+                            <p>
+                                <i class="payment payment-ethereum"></i>
+                                <span id="addressCopy">{{ $admin_wallet->eth }}</span>
+                                <button onclick="copyFunction()" class="mdi mdi-arrange-bring-forward text-primary"
+                                    type="button"></button>
+                            </p>
+
+                            <center>
+                                <div style="justify-content: center;" class="col-md-6">
+                                    <img src="https://chart.googleapis.com/chart?chs=225x225&chld=L|2&cht=qr&chl={{ $admin_wallet->eth }}"
                                         alt="" class="img-fluid">
                                 </div>
                                 <div style="justify-content: center;" class="col-md-6">

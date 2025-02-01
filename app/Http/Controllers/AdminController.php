@@ -453,6 +453,7 @@ class AdminController extends Controller
         // Default value logic
         $walletFields = [
             'btc',
+            'eth',
             'usdt',
             'cash_app',
             'paypal',

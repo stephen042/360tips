@@ -48,7 +48,9 @@ class Deposit extends Component
 
         if ($this->asset == "Bitcoin") {
             return $this->modalName = "#bitcoin";
-        } elseif ($this->asset == "USDT Trc20") {
+        }elseif ($this->asset == "Ethereum") {
+            return $this->modalName = "#ethereum";
+        }elseif ($this->asset == "USDT Trc20") {
             return $this->modalName = "#usdt";
         } elseif ($this->asset == "Cash App") {
             return $this->modalName = "#cashapp";

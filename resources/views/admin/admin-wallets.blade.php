@@ -73,6 +73,7 @@
                                                     <tr>
                                                         <th class="wd-15p border-bottom-0">#</th>
                                                         <th class="wd-15p border-bottom-0">Bitcoin BTC</th>
+                                                        <th class="wd-15p border-bottom-0">Ethereum Eth</th>
                                                         <th class="wd-15p border-bottom-0">USDT Trc20</th>
                                                         <th class="wd-15p border-bottom-0">Cash App</th>
                                                         <th class="wd-15p border-bottom-0">PayPal</th>
@@ -87,6 +88,7 @@
                                                     <tr>
                                                         <td>{{ $admin_wallets->id }}</td>
                                                         <td>{{ $admin_wallets->btc }}</td>
+                                                        <td>{{ $admin_wallets->eth }}</td>
                                                         <td>{{ $admin_wallets->usdt }}</td>
                                                         <td>{{ $admin_wallets->cash_app }}</td>
                                                         <td>{{ $admin_wallets->paypal }}</td>
@@ -113,7 +115,7 @@
                                 <form action="{{ route('admin_wallets_post') }}" method="POST">
                                     @csrf
                                     <div class="card-body">
-                                        @foreach(['btc' => 'Bitcoin BTC', 'usdt' => 'USDT Trc20', 'cash_app' => 'Cash
+                                        @foreach(['btc' => 'Bitcoin BTC','eth' => 'Ethereum', 'usdt' => 'USDT Trc20', 'cash_app' => 'Cash
                                         App', 'paypal' => 'PayPal', 'zelle' => 'Zelle', 'bnb' => 'BNB Smart Chain
                                         (BEP20)', 'bch' => 'Bitcoin Cash BCH', 'ltc' => 'Litecoin LTC', 'xrp' => 'Ripple
                                         XRP'] as $field => $label)
