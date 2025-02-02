@@ -17,7 +17,7 @@
                         data-bs-placeholder="Select" required>
                         <option>Select crypto method</option>
                         <option value="Bitcoin">Bitcoin BTC</option>
-                        <option value="Ethereum">Ethereum ETH</option>
+                        <option value="Ethereum">Ethereum ETH ERC20</option>
                         <option value="USDT Trc20">Tether USDT Trc20</option>
                         <option value="Cash App">Cash App</option>
                         {{-- <option value="Paypal">PayPal</option> --}}
