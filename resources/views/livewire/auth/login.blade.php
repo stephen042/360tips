@@ -1,5 +1,5 @@
 <div class="card-body">
-    <form class="login100-form validate-form" wire:submit.throttle.1000.prevent="login22" method="post">
+    <form class="login100-form validate-form" wire:submit.throttle.1000.prevent="login" method="post">
         <span class="login100-form-title">
             Login
         </span>
