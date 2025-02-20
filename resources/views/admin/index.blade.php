@@ -147,7 +147,7 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($users_data as $counter => $user)
-                                                        <livewire:admin.all-users wire:key="{{$user->id}}"  :user="$user"/>
+                                                        <livewire:admin.all-users wire:key="{{$user->id}}"  :user="$user" :counter="$counter + 1"/>
                                                     @endforeach
                                                 </tbody>
                                             </table>

@@ -1,6 +1,6 @@
 <tr class="border-bottom">
     <td class="text-muted fs-15 fw-semibold text-center">
-        {{ $counter + 1 }}.
+        {{ $counter }}.
     </td>
     <td>
         <div class="d-flex">

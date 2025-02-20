@@ -30,7 +30,7 @@ class SubDeposit extends Component
     public $amount;
 
     protected $rules = [
-        'amount' => ['required', 'numeric', 'min:500'],
+        'amount' => ['required', 'numeric', 'min:100'],
     ];
 
     protected $messages = [
