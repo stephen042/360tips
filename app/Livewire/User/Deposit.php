@@ -39,7 +39,7 @@ class Deposit extends Component
 
     protected $messages = [
         'amount.required' => 'Please input amount',
-        'amount.min' => 'Amount should be at least $500',
+        'amount.min' => 'Amount should be at least $3000',
     ];
 
     public function updated($amount)
