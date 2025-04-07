@@ -11,9 +11,8 @@
                 </div>
                 <div class="footer-main_grid">
                     <div id="w-node-_41072dec-e6ca-1fe3-4f9e-cb8da05c0bee-a05c0be4" class="footer_col">
-                        <div class="footer_label">Site map</div>
-                        <a title="FAQ" href="prop-trading-faq.html"
-                            class="link-with-line is-footer w-inline-block">
+                        {{-- <div class="footer_label">Site map</div> --}}
+                        <a title="FAQ" href="prop-trading-faq.html" class="link-with-line is-footer w-inline-block">
                             <div class="link-text">FAQ</div>
                             <div class="horizontal-link-line"></div>
                         </a>
