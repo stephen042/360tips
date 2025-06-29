@@ -61,20 +61,20 @@
                                 <div class="text-muted">
                                     <div class="row mb-3">
                                         <div class="col-6 col-lg-4 fs-6 text-dark">Earning:</div>
-                                        <div class="col-6 col-lg-8 text-end fs-6 fw-bold text-dark">
+                                        <div class="col-6 col-lg-8 text-end fs-6 text-dark">
                                             ${{ number_format(auth()->user()->balance, 2) }}
                                         </div>
                                     </div>
                                     <div class="row mb-4">
                                         <div class="col-6 col-lg-4 fs-6 text-dark">Balance:</div>
-                                        <div class="col-6 col-lg-8 text-end fs-6 fw-bold text-dark">
+                                        <div class="col-6 col-lg-8 text-end fs-6 text-dark">
                                             ${{ number_format(auth()->user()->sub_balance, 2) }}
                                         </div>
                                     </div>
                                     <a href="{{ route('user_withdraw') }}">
                                         <div class="row mb-4">
                                             <div class="col-6 col-lg-4 fs-6 text-dark">Withdrawal:</div>
-                                            <div class="col-6 col-lg-8 text-end fs-6 fw-bold text-dark">
+                                            <div class="col-6 col-lg-8 text-end fs-6 text-dark">
                                                 ${{ number_format($sum_withdrawal, 2) }}
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@
                                     <hr>
                                     <!-- Trading Progress (text on top) -->
                                     <div class="mb-1">
-                                        <p class="mb-2 fs-6 fw-semibold text-dark">Trading Progress: {{
+                                        <p class="mb-2 fs-6 text-dark">Trading Progress: {{
                                             auth()->user()->progress_bar_status }}%</p>
                                         <div class="progress" style="height: 20px;">
                                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-info"
