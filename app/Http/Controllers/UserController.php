@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Mail\AppMail;
 use App\Models\token;
+use App\Models\Trades;
 use App\Models\AI_Plans;
 use Illuminate\Support\Str;
+use App\Models\Transactions;
 use Illuminate\Http\Request;
 use App\Models\Notifications;
+use Livewire\Attributes\Validate;
 use App\Models\Plans_Transactions;
-use App\Models\Trades;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Livewire\Attributes\Validate;
 
 class UserController extends Controller
 {
@@ -88,6 +89,23 @@ class UserController extends Controller
         session()->flash('success', 'Password Changed successfully');
 
         return redirect()->route('login');
+    }
+
+    public function trade(Request $request)
+    {
+        if ($request->method() == 'GET') {
+            $user_id = Auth::user()->id;
+
+            $sum_withdrawal = Transactions::where('user_id', $user_id)
+                ->where('transaction_category', 2)
+                ->where('transaction_status', 2)
+                ->sum('transaction_amount');
+
+            return view('users.trade', [
+                "title" => "Trade",
+                "sum_withdrawal" => $sum_withdrawal,
+            ]);
+        }
     }
 
     public function deposit(Request $request)
@@ -287,7 +305,7 @@ class UserController extends Controller
 
         $data = (object) $request->all();
 
-        $result = $user->where("id",Auth::user()->id)->update([
+        $result = $user->where("id", Auth::user()->id)->update([
             "first_name" => $data->first_name,
             "last_name" => $data->last_name,
             "email" => $data->email,

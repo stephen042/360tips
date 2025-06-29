@@ -39,6 +39,7 @@ Route::prefix('users')->group(function () {
         Route::get('/', [UserController::class, 'users'])->name('user_dashboard');
         Route::get('/deposit', [UserController::class, 'deposit'])->name('user_deposit');
         Route::get('/sub_deposit', [UserController::class, 'sub_deposit'])->name('user_sub_deposit');
+        Route::get('/trade', [UserController::class, 'trade'])->name('user_trade');
         Route::get('/withdraw', [UserController::class, 'withdraw'])->name('user_withdraw');
         Route::get('/ai-plans', [UserController::class, 'ai_plans'])->name('user_ai_plans');
         // Route::put('/ai-plans', [UserController::class, 'ai_plans'])->name('user_ai_plans_put');
