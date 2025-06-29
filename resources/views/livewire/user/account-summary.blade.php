@@ -30,13 +30,13 @@
             <div class="card-body">
                 <p class="m-0">
                     <span><i class="bi bi-wallet2 h4"></i></span>
-                    Total Balance: <span class="h4 text-bold">$ {{ number_format($user_data->balance, 2) }}</span>
+                    Total Earnings: <span class="h4 text-bold">$ {{ number_format($user_data->earnings_balance, 2) }}</span>
                 </p>
             </div>
             <div class="card-body">
                 <p class="m-0">
                     <span><i class="bi bi-wallet2 h4"></i></span>
-                    Total Earnings: <span class="h4 text-bold">$ {{ number_format($user_data->earnings_balance, 2) }}</span>
+                    Total Balance: <span class="h4 text-bold">$ {{ number_format($user_data->balance, 2) }}</span>
                 </p>
             </div>
             <div class="card-body">
