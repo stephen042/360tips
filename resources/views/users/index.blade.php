@@ -110,7 +110,10 @@
                                 <div class="mt-4 pt-3 border-top"></div>
 
                                 <!-- Message Content -->
-                                <h6 class="card-title mb-2 text-danger">Important Message</h6>
+                                <h6 class="card-title mb-2 text-danger">IMPORTANT MESSAGE  <i
+                                        class="fas fa-exclamation-triangle mx-2"></i>
+                                </h6>
+                                <hr>
                                 <p class="card-text mb-0"
                                     style="font-size: 0.95rem; max-height: 300px; overflow-y: auto;">
                                     {{ auth()->user()->message }}
