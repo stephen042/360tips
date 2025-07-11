@@ -11,6 +11,8 @@ class EditUserAccount extends Component
 {
     public $user_data;
 
+    public $message_body;
+
     public $status_plans;
 
     public $credit_bal_amount;
@@ -26,6 +28,33 @@ class EditUserAccount extends Component
     public $debit_sub_bal_amount;
 
     public $change_status_data;
+
+    public function mount($user_data){
+        $this->message_body = $user_data->message;
+    }
+
+    public function sendMessageToUser()
+    {
+        $this->validate([
+            "message_body" => ['min:5'],
+        ]);
+
+        $user_id = $this->user_data->id;
+
+        $result = User::where("id", $user_id)->update([
+            "message" => $this->message_body,
+        ]);
+
+        if ($result) {
+            session()->flash('success', 'Message sent successfully');
+
+            return Redirect::route('edit_user', [$user_id]);
+        }
+
+        session()->flash('error', 'An error occurred try again later');
+
+        return Redirect::route('edit_user', [$user_id]);
+    }
 
 
     public function credit_balance()

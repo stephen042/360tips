@@ -164,4 +164,27 @@
             </div>
         </div>
     </div><!-- COL END -->
+    <div class="col-md-12 col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <form wire:submit.prevent="sendMessageToUser">
+                    <div class="form-group mb-3">
+                        <label class="form-label">Send Message to User</label>
+                        <textarea class="form-control" rows="6" wire:model.defer="message_body"
+                            placeholder="Write your message here..."></textarea>
+                        @error('message_body')
+                        <em class="text-danger">{{ $message }}</em>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary please-wait-btn" type="submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- COL END -->
+
 </div>

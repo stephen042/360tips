@@ -33,26 +33,26 @@
                     <div class="main-container container-fluid">
                         <center>
                             @if (session()->has('error'))
-                                <div class="alert alert-danger alert-dismissible fade show w-80" role="alert">
-                                    <span class="alert-inner--icon"><i class="fe fe-slash"></i></span>
-                                    <span class="alert-inner--text"><strong>error!</strong>
-                                        {{ session('error') }}
-                                    </span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-danger alert-dismissible fade show w-80" role="alert">
+                                <span class="alert-inner--icon"><i class="fe fe-slash"></i></span>
+                                <span class="alert-inner--text"><strong>error!</strong>
+                                    {{ session('error') }}
+                                </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             @endif
                             @if (session()->has('success'))
-                                <div class="alert alert-success alert-dismissible fade show w-80" role="alert">
-                                    <span class="alert-inner--icon"><i class="fe fe-thumbs-up"></i></span>
-                                    <span class="alert-inner--text"><strong>Success!</strong>
-                                        {{ session('success') }}
-                                    </span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-success alert-dismissible fade show w-80" role="alert">
+                                <span class="alert-inner--icon"><i class="fe fe-thumbs-up"></i></span>
+                                <span class="alert-inner--text"><strong>Success!</strong>
+                                    {{ session('success') }}
+                                </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             @endif
                         </center>
 
@@ -74,27 +74,52 @@
                                 </a>
 
                                 @if (auth()->user()->verify_status == 0)
-                                    <div class="alert alert-danger btn m-2">
-                                        UNVERIFIED
-                                    </div>
+                                <div class="alert alert-danger btn m-2">
+                                    UNVERIFIED
+                                </div>
                                 @else
-                                    <div class="alert alert-success btn m-2">
-                                        VERIFIED
-                                    </div>
+                                <div class="alert alert-success btn m-2">
+                                    VERIFIED
+                                </div>
                                 @endif
 
                                 @if (auth()->user()->account_status == 'None')
-                                    <div class="alert alert-danger btn">
-                                        Status: {{ auth()->user()->account_status }}
-                                    </div>
+                                <div class="alert alert-danger btn">
+                                    Status: {{ auth()->user()->account_status }}
+                                </div>
                                 @else
-                                    <div class="alert alert-success btn">
-                                        Status: {{ auth()->user()->account_status }}
-                                    </div>
+                                <div class="alert alert-success btn">
+                                    Status: {{ auth()->user()->account_status }}
+                                </div>
                                 @endif
 
                             </div>
                         </div>
+
+                        @if (!empty(auth()->user()->message))
+                        <div class="admin-message card shadow-sm position-relative mb-3">
+                            <div class="card-body pb-2 position-relative px-4">
+                                <!-- Styled Close Button -->
+                                <button
+                                    class="close-message-btn btn btn-sm bg-light text-info border shadow-sm px-4 py-2"
+                                    title="Dismiss">
+                                    Close
+                                </button>
+
+                                <!-- Space below the button -->
+                                <div class="mt-4 pt-3 border-top"></div>
+
+                                <!-- Message Content -->
+                                <h6 class="card-title mb-2 text-danger">Important Message</h6>
+                                <p class="card-text mb-0"
+                                    style="font-size: 0.95rem; max-height: 300px; overflow-y: auto;">
+                                    {{ auth()->user()->message }}
+                                </p>
+                            </div>
+                        </div>
+                        @endif
+
+
                         <livewire:user.account-summary />
                         <!-- PAGE-HEADER END -->
                         <div class="row row-cards">
@@ -145,8 +170,8 @@
                                                     style="background-color: #161616;border-radius: 10px">
                                                     <li>
                                                         <a style="color: #ADADAD;font-weight: bold;font-family:'Roboto', sans-serif;"
-                                                            href="#tab5" class="active btn m-1 p-2 px-5"
-                                                            id="tab-5" data-bs-toggle="tab">Buy
+                                                            href="#tab5" class="active btn m-1 p-2 px-5" id="tab-5"
+                                                            data-bs-toggle="tab">Buy
                                                         </a>
                                                     </li>
                                                     <li>
@@ -156,13 +181,6 @@
 
                                                         </a>
                                                     </li>
-                                                    <li>
-                                                        <a style="color: #ADADAD;font-weight: bold;font-family:'Roboto', sans-serif;"
-                                                            href="#tab7" class="btn m-1 p-2 px-2"
-                                                            data-bs-toggle="tab">Convert
-                                                        </a>
-                                                    </li>
-                                                    <!-- <li><a href="#tab8" data-bs-toggle="tab">Tab 4</a></li> -->
                                                 </ul>
                                             </div>
                                         </div>
@@ -173,18 +191,6 @@
                                                 </div>
                                                 <div class="tab-pane " id="tab6">
                                                     <livewire:user.sell-trade />
-                                                </div>
-                                                <div class="tab-pane " id="tab7">
-                                                    <!-- Crypto Converter ⚡ Widget -->
-                                                    <crypto-converter-widget shadow symbol live
-                                                        background-color="#383a59" border-radius="0.87rem"
-                                                        fiat="united-states-dollar" crypto="bitcoin" amount="1"
-                                                        font-family="sans-serif"
-                                                        decimal-places="2"></crypto-converter-widget>
-                                                    <a href="#" target="_blank" rel="noopener">
-                                                    </a>
-                                                    <script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script>
-                                                    <!-- /Crypto Converter ⚡ Widget -->
                                                 </div>
                                             </div>
                                         </div>
@@ -202,7 +208,7 @@
         <!-- FOOTER -->
         @include('includes.user-footer')
         <!-- FOOTER END -->
-        
+
         <!-- APP-NAv -->
         @include('includes.user-nav-down')
         <!-- /APP-NAv -->
@@ -210,6 +216,15 @@
     <!-- CONTAINER END -->
     @include('includes.user-scripts')
 
+    <!-- JS to handle Close -->
+    <script>
+        document.querySelectorAll('.close-message-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const card = this.closest('.admin-message');
+            if (card) card.remove();
+        });
+    });
+    </script>
 </body>
 
 </html>
