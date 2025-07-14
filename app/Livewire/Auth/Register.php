@@ -62,10 +62,6 @@ class Register extends Component
 
 
         if ($insert) {
-            
-            CryptoWallets::create([
-                'user_id' => $insert->id,
-            ]);
 
             $app = config('app.name');
             $userEmail = $validated['email'];

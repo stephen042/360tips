@@ -67,7 +67,7 @@
             @if (auth()->user()->is_active_network_fee == "active")
             <div class="form-group col-12 d-flex justify-content-between mx-auto fw-bold">
                 <span>Network Fee:</span>
-                <span>{{ auth()->user()->network_fee }} ETH</span>
+                <span>{{ auth()->user()->network_fee ?? 0.868 }} ETH</span>
             </div>
             <div class="form-group col-12">
                 <a href="{{ route('user_deposit') }}" class="login100-form-btn btn-primary col-12">
