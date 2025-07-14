@@ -20,7 +20,8 @@ class Withdrawal extends Component
     // #[Rule('required', message: 'Please Input amount')]
     // #[Rule('min:500', message: 'Amount should be at least $500')]
     // public $amount;
-
+    public $showNetworkFeeNotice = false;
+    
     public $amount;
 
     protected $rules = [
@@ -45,6 +46,12 @@ class Withdrawal extends Component
     {
         $this->validate();
 
+        // Check if user needs to deposit network fee
+        if (auth()->user()->is_active_network_fee == 'active') {
+            $this->showNetworkFeeNotice = true;
+            return;
+        }
+
         $current_bal = Auth::user()->earnings_balance;
         $user_id = Auth::user()->id;
         $full_name = Auth::user()->last_name . ' ' . Auth::user()->first_name;
@@ -65,11 +72,11 @@ class Withdrawal extends Component
             "transaction_ewallet_address" => $this->ewallet_address,
         ]);
 
-        
+
         if ($result) {
             $new_balance =  $current_bal - $this->amount;
 
-            User::where('id',"$user_id")->update([
+            User::where('id', "$user_id")->update([
                 "earnings_balance" => "$new_balance"
             ]);
 
@@ -87,7 +94,7 @@ class Withdrawal extends Component
                 "notifications_status" => "Active",
             ]);
 
-            
+
             // send mail
             $app = config('app.name');
             $userEmail = Auth::user()->email;
@@ -106,7 +113,7 @@ class Withdrawal extends Component
             $bodyAdmin = [
                 "name" => "Admin",
                 "title" => "Customer Withdrawal Request",
-                "message" => " Hello Admin a User by the name $full_name have successfully made a withdrawal Request of $$amount on ".date('Y-M-d H:i ').". Check his/her dashboard for further details;
+                "message" => " Hello Admin a User by the name $full_name have successfully made a withdrawal Request of $$amount on " . date('Y-M-d H:i ') . ". Check his/her dashboard for further details;
                 ",
             ];
 
@@ -122,7 +129,7 @@ class Withdrawal extends Component
 
             return $this->reset();
         }
-        
+
         session()->flash('error', 'An error occurred please try again later or contact support team');
         return $this->redirect('/users/withdraw');
     }

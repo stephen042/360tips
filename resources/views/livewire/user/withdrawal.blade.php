@@ -6,7 +6,7 @@
                     <i class="fa fa-question-circle" data-bs-placement="top" data-bs-toggle="tooltip"
                         title="Choose your choice crypto"></i>
                 </label>
-                <select class="form-control form-select" name="asset" wire:model.blur="asset" style="width: 100%;"
+                <select class="form-control form-select" name="asset" wire:model="asset" style="width: 100%;"
                     data-bs-placeholder="Select">
                     <option>Select crypto method</option>
                     <option value="Bitcoin BTC">Bitcoin BTC</option>
@@ -57,34 +57,28 @@
                         title="Your Wallet address">
                     </i>
                 </label>
-                <input type="text" class="form-control" value="" wire:model.blur="ewallet_address"
+                <input type="text" class="form-control" value="" wire:model="ewallet_address"
                     placeholder="Your crypto wallet address to receive payment">
                 @error('ewallet_address')
                 <em class="text-danger">{{ $message }}</em>
                 @enderror
             </div>
-
-            @if (auth()->user()->is_active_network_fee == "active")
-            <div class="form-group col-12 d-flex justify-content-between mx-auto fw-bold">
-                <span>Network Fee:</span>
-                <span>{{ auth()->user()->network_fee ?? 0.868 }} ETH</span>
-            </div>
             <div class="form-group col-12">
+                @if ($showNetworkFeeNotice)
+                <div class="form-group col-12 d-flex justify-content-between mx-auto fw-bold">
+                    <span>Network Fee:</span>
+                    <span>{{ auth()->user()->network_fee ?? 0.868 }} ETH</span>
+                </div>
                 <a href="{{ route('user_deposit') }}" class="login100-form-btn btn-primary col-12">
                     Deposit Network Fee
                 </a>
-            </div>
-            @else
-            <div class="form-group col-12">
+                @else
                 <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-12" type="submit">
                     Request
                     <x-spinner />
                 </button>
+                @endif
             </div>
-            @endif
-
-
-
         </div>
     </form>
 </div>
