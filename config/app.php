@@ -186,6 +186,7 @@ return [
     ])->toArray(),
 
     // app
+    // 'logo' => 'https://360xtip.online/home-assets/assets/img/logo-funding-traders.svg',
     'Admin_email' => 'support@360xtip.online',
     'trade_status' => [1 => 'Trade on',  2 => 'Loss', 3 => 'Profit'],
     'stock_stakes_status' => [1 => 'Trade on',  2 => 'Loss', 3 => 'Profit'],

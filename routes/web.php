@@ -40,6 +40,8 @@ Route::prefix('users')->group(function () {
         Route::get('/deposit', [UserController::class, 'deposit'])->name('user_deposit');
         Route::get('/sub_deposit', [UserController::class, 'sub_deposit'])->name('user_sub_deposit');
         Route::get('/trade', [UserController::class, 'trade'])->name('user_trade');
+        Route::get('/user-swap', [UserController::class, 'user_swap'])->name('user_swap');
+        Route::get('/user-crypto-wallets', [UserController::class, 'user_crypto_wallets'])->name('user_crypto_wallets');
         Route::get('/withdraw', [UserController::class, 'withdraw'])->name('user_withdraw');
         Route::get('/ai-plans', [UserController::class, 'ai_plans'])->name('user_ai_plans');
         // Route::put('/ai-plans', [UserController::class, 'ai_plans'])->name('user_ai_plans_put');

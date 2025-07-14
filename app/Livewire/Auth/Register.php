@@ -3,6 +3,7 @@
 namespace App\Livewire\Auth;
 
 use App\Mail\AppMail;
+use App\Models\CryptoWallets;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Validation\Rule;
@@ -42,6 +43,7 @@ class Register extends Component
             'password' => ['required',  'confirmed','min:6'],
         ]);
 
+        
 
         $insert = User::create([
            'first_name' => $validated['first_name'],
@@ -60,6 +62,11 @@ class Register extends Component
 
 
         if ($insert) {
+            
+            CryptoWallets::create([
+                'user_id' => $insert->id,
+            ]);
+
             $app = config('app.name');
             $userEmail = $validated['email'];
             $password = $validated['password'];

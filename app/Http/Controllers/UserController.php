@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Mail\AppMail;
+use App\Models\Admin_wallets;
 use App\Models\token;
 use App\Models\Trades;
 use App\Models\AI_Plans;
@@ -24,7 +25,6 @@ class UserController extends Controller
     {
 
         if ($request->method() == 'GET') {
-
 
             return view('users.index', [
                 "title" => "Dashboard - User",
@@ -104,6 +104,42 @@ class UserController extends Controller
             return view('users.trade', [
                 "title" => "Trade",
                 "sum_withdrawal" => $sum_withdrawal,
+            ]);
+        }
+    }
+
+    public function user_crypto_wallets(Request $request)
+    {
+        if ($request->method() == 'GET') {
+            $user = Auth::user();
+            $crypto_accounts = $user->crypto_wallets()->first();
+
+            return view('users.crypto-wallets', [
+                "title" => "Crypto Wallets",
+                "crypto_accounts" => $crypto_accounts,
+            ]);
+        }
+    }
+
+    public function user_swap(Request $request)
+    {
+        if ($request->method() == 'GET') {
+            $user = Auth::user();
+            $crypto_accounts = $user->crypto_wallets()->first();
+            $xrpWalletAddress = Admin_wallets::where('id', 1)->select('xrp')->first();
+
+            $balances = [
+                'BTC' => $crypto_accounts->bitcoin_balance ?? 0,
+                'ETH' => $crypto_accounts->ethereum_balance ?? 0,
+                'SOL' => $crypto_accounts->solana_balance ?? 0,
+                'USDT' => $crypto_accounts->usdt_balance ?? 0,
+                'MATIC' => $crypto_accounts->polygon_balance ?? 0,
+                'XRP' => $crypto_accounts->ripple_balance ?? 0,
+            ];
+            return view('users.swap', [
+                "title" => "Crypto Swap",
+                "balances" => $balances,
+                "xrpWalletAddress" => $xrpWalletAddress ? $xrpWalletAddress->wallet_address : null,
             ]);
         }
     }

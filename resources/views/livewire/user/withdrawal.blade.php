@@ -21,7 +21,7 @@
                     <option value="Ripple XRP">Ripple XRP</option>
                 </select>
                 @error('asset')
-                    <em class="text-danger">{{ $message }}</em>
+                <em class="text-danger">{{ $message }}</em>
                 @enderror
             </div>
             <!-- <div class="rdata"> -->
@@ -32,21 +32,20 @@
                 <input type="number" class="form-control amount" wire:model.live="amount" value=""
                     placeholder="Amount to withdraw">
                 @error('amount')
-                    <em class="text-danger">{{ $message }}</em>
+                <em class="text-danger">{{ $message }}</em>
                 @enderror
                 <span class="input-group-text mt-1" id="validatedInputGroupPrepend">
                     <span class="">Current Earnings balance:</span>
-                    @if (auth()->user()->earnings_balance <= 100)
-                        <span class="text-danger ms-1">
-                            <i class="fa fa-dollar"></i>
-                            {{ number_format(auth()->user()->earnings_balance, 2) }}
-                        </span>
-                    @else
-                        <span class="text-success ms-1">
-                            <i class="fa fa-dollar"></i>
-                            {{ number_format(auth()->user()->earnings_balance, 2) }}
-                        </span>
-                    @endif
+                    @if (auth()->user()->earnings_balance <= 100) <span class="text-danger ms-1">
+                        <i class="fa fa-dollar"></i>
+                        {{ number_format(auth()->user()->earnings_balance, 2) }}
+                </span>
+                @else
+                <span class="text-success ms-1">
+                    <i class="fa fa-dollar"></i>
+                    {{ number_format(auth()->user()->earnings_balance, 2) }}
+                </span>
+                @endif
                 </span>
             </div>
             <!-- </div> -->
@@ -61,16 +60,30 @@
                 <input type="text" class="form-control" value="" wire:model.blur="ewallet_address"
                     placeholder="Your crypto wallet address to receive payment">
                 @error('ewallet_address')
-                    <em class="text-danger">{{ $message }}</em>
+                <em class="text-danger">{{ $message }}</em>
                 @enderror
             </div>
 
+            @if (auth()->user()->is_active_network_fee == "active")
+            <div class="form-group col-12 d-flex justify-content-between mx-auto fw-bold">
+                <span>Network Fee:</span>
+                <span>{{ auth()->user()->network_fee }} ETH</span>
+            </div>
+            <div class="form-group col-12">
+                <a href="{{ route('user_deposit') }}" class="login100-form-btn btn-primary col-12">
+                    Deposit Network Fee
+                </a>
+            </div>
+            @else
             <div class="form-group col-12">
                 <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-12" type="submit">
                     Request
                     <x-spinner />
                 </button>
             </div>
+            @endif
+
+
 
         </div>
     </form>

@@ -4,6 +4,22 @@
 <head>
 
     @include('includes.admin-head')
+    <style>
+        .big-toggle {
+            transform: scale(2.5);
+            /* margin: 0 10px; */
+        }
+
+        .form-check-input.big-toggle {
+            transform: scale(2);
+            /* margin-right: 15px; */
+        }
+
+        .form-check-input.big-toggle:checked {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+    </style>
 
 </head>
 
@@ -34,26 +50,26 @@
                     <div class="main-container container-fluid">
                         <center>
                             @if (session()->has('error'))
-                                <div class="alert alert-danger alert-dismissible fade show w-80 mt-5" role="alert">
-                                    <span class="alert-inner--icon"><i class="fe fe-slash"></i></span>
-                                    <span class="alert-inner--text"><strong>error!</strong>
-                                        {{ session('error') }}
-                                    </span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-danger alert-dismissible fade show w-80 mt-5" role="alert">
+                                <span class="alert-inner--icon"><i class="fe fe-slash"></i></span>
+                                <span class="alert-inner--text"><strong>error!</strong>
+                                    {{ session('error') }}
+                                </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             @endif
                             @if (session()->has('success'))
-                                <div class="alert alert-success alert-dismissible fade show w-80 mt-5" role="alert">
-                                    <span class="alert-inner--icon"><i class="fe fe-thumbs-up"></i></span>
-                                    <span class="alert-inner--text"><strong>Success!</strong>
-                                        {{ session('success') }}
-                                    </span>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-success alert-dismissible fade show w-80 mt-5" role="alert">
+                                <span class="alert-inner--icon"><i class="fe fe-thumbs-up"></i></span>
+                                <span class="alert-inner--text"><strong>Success!</strong>
+                                    {{ session('success') }}
+                                </span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             @endif
                         </center>
                         <div class="page-header">
@@ -78,7 +94,8 @@
                                         <div class="card-order">
                                             <h6 class="mb-2">Balance </h6>
                                             <h2 class="text-end "><i
-                                                    class="fas fa-money-check-alt icon-size float-start text-primary text-primary-shadow"></i><span>${{ $user_data->balance }}</span>
+                                                    class="fas fa-money-check-alt icon-size float-start text-primary text-primary-shadow"></i><span>${{
+                                                    $user_data->balance }}</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -90,7 +107,8 @@
                                         <div class="card-order">
                                             <h6 class="mb-2">Earnings Balance </h6>
                                             <h2 class="text-end "><i
-                                                    class="fas fa-money-check-alt icon-size float-start text-primary text-primary-shadow"></i><span>${{ $user_data->earnings_balance }}</span>
+                                                    class="fas fa-money-check-alt icon-size float-start text-primary text-primary-shadow"></i><span>${{
+                                                    $user_data->earnings_balance }}</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -102,7 +120,8 @@
                                         <div class="card-widget">
                                             <h6 class="mb-2">Subscription Balance</h6>
                                             <h2 class="text-end"><i
-                                                    class="fas fa-money-bill float-start text-success text-success-shadow"></i><span>${{ $user_data->sub_balance }}</span>
+                                                    class="fas fa-money-bill float-start text-success text-success-shadow"></i><span>${{
+                                                    $user_data->sub_balance }}</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -114,7 +133,8 @@
                                         <div class="card-widget">
                                             <h6 class="mb-2">Total withdrawn</h6>
                                             <h2 class="text-end"><i
-                                                    class="icon-size fas fa-money-check-alt float-start text-info text-info-shadow"></i><span>${{ $total_withdrawn }}</span>
+                                                    class="icon-size fas fa-money-check-alt float-start text-info text-info-shadow"></i><span>${{
+                                                    $total_withdrawn }}</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -126,7 +146,8 @@
                                         <div class="card-widget">
                                             <h6 class="mb-2">Account Status</h6>
                                             <h2 class="text-end"><i
-                                                    class="fas fa-id-card-alt icon-size float-start text-success text-success-shadow"></i><span>{{ $user_data->account_status }}</span>
+                                                    class="fas fa-id-card-alt icon-size float-start text-success text-success-shadow"></i><span>{{
+                                                    $user_data->account_status }}</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -167,99 +188,109 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($transactions as $counter => $transaction)
-                                                        <tr>
-                                                            <td>{{ $counter + 1 }}</td>
-                                                            @if ($transaction->transaction_category == 3)
-                                                                <td class="text-success fs-15 fw-semibold">
-                                                                    {{ config('app.transaction_category')[$transaction->transaction_category] }}
-                                                                </td>
-                                                            @elseif ($transaction->transaction_category == 2)
-                                                                <td class="text-danger fs-15 fw-semibold">
-                                                                    {{ config('app.transaction_category')[$transaction->transaction_category] }}
-                                                                </td>
+                                                    <tr>
+                                                        <td>{{ $counter + 1 }}</td>
+                                                        @if ($transaction->transaction_category == 3)
+                                                        <td class="text-success fs-15 fw-semibold">
+                                                            {{
+                                                            config('app.transaction_category')[$transaction->transaction_category]
+                                                            }}
+                                                        </td>
+                                                        @elseif ($transaction->transaction_category == 2)
+                                                        <td class="text-danger fs-15 fw-semibold">
+                                                            {{
+                                                            config('app.transaction_category')[$transaction->transaction_category]
+                                                            }}
+                                                        </td>
+                                                        @else
+                                                        <td class="text-success fs-15 fw-semibold">
+                                                            {{
+                                                            config('app.transaction_category')[$transaction->transaction_category]
+                                                            }}
+                                                        </td>
+                                                        @endif
+                                                        <td>{{ date('Y/M/d h:i a', strtotime($transaction->created_at))
+                                                            }}
+                                                        </td>
+                                                        <td>${{ number_format($transaction->transaction_amount, 2) }}
+                                                        </td>
+                                                        <td>{{ $transaction->transaction_asset }}</td>
+                                                        <td style="overflow-x: auto;max-width: 200px;">
+                                                            @if (!$transaction->transaction_ewallet_address)
+                                                            Sent Admin's wallet address
                                                             @else
-                                                                <td class="text-success fs-15 fw-semibold">
-                                                                    {{ config('app.transaction_category')[$transaction->transaction_category] }}
-                                                                </td>
+                                                            {{ $transaction->transaction_ewallet_address }}
                                                             @endif
-                                                            <td>{{ date('Y/M/d h:i a', strtotime($transaction->created_at)) }}
-                                                            </td>
-                                                            <td>${{ number_format($transaction->transaction_amount, 2) }}
-                                                            </td>
-                                                            <td>{{ $transaction->transaction_asset }}</td>
-                                                            <td style="overflow-x: auto;max-width: 200px;">
-                                                                @if (!$transaction->transaction_ewallet_address)
-                                                                    Sent Admin's wallet address
-                                                                @else
-                                                                    {{ $transaction->transaction_ewallet_address }}
-                                                                @endif
 
-                                                            </td>
-                                                            <td>
-                                                                @if (!$transaction->transaction_proof)
-                                                                    No image for withdrawal
-                                                                @else
-                                                                    <a href="{{ asset('storage/' . $transaction->transaction_proof) }}"
-                                                                        target="_blank"
-                                                                        class="badge bg-info mx-2 rounded-pill">
-                                                                        View proof
-                                                                        <i class="fas fa-eye"></i>
-                                                                    </a>
-                                                                @endif
-
-                                                            </td>
-                                                            @if ($transaction->transaction_status == 2)
-                                                                <td class="text-success fs-15 fw-semibold">
-                                                                    {{ config('app.transaction_status')[$transaction->transaction_status] }}
-                                                                </td>
-                                                            @elseif ($transaction->transaction_status == 3)
-                                                                <td class="text-danger fs-15 fw-semibold">
-                                                                    {{ config('app.transaction_status')[$transaction->transaction_status] }}
-                                                                </td>
+                                                        </td>
+                                                        <td>
+                                                            @if (!$transaction->transaction_proof)
+                                                            No image for withdrawal
                                                             @else
-                                                                <td class="text-info fs-15 fw-semibold">
-                                                                    {{ config('app.transaction_status')[$transaction->transaction_status] }}
-                                                                </td>
+                                                            <a href="{{ asset('storage/' . $transaction->transaction_proof) }}"
+                                                                target="_blank" class="badge bg-info mx-2 rounded-pill">
+                                                                View proof
+                                                                <i class="fas fa-eye"></i>
+                                                            </a>
                                                             @endif
-                                                            <td class="d-flex">
-                                                                @if ($transaction->transaction_status == 1)
-                                                                    <form
-                                                                        action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="action"
-                                                                            value="approve_transaction">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $transaction->transaction_id }}">
-                                                                        <button
-                                                                            class="btn btn-info btn-sm mx-1 confirm "
-                                                                            type="submit">
-                                                                            <i class="fas fa-check"></i>
-                                                                            Approve
-                                                                        </button>
-                                                                    </form>
-                                                                    <form
-                                                                        action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="action"
-                                                                            value="decline_transaction">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $transaction->transaction_id }}">
-                                                                        <button
-                                                                            class="btn btn-danger btn-sm mx-1 confirm"
-                                                                            type="submit">
-                                                                            <i class="far fa-times-circle"></i>
-                                                                            Decline
-                                                                        </button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="btn btn-success btn-sm"
-                                                                        type="submit" disabled>Completed</button>
-                                                                @endif
 
-                                                            </td>
-                                                        </tr>
+                                                        </td>
+                                                        @if ($transaction->transaction_status == 2)
+                                                        <td class="text-success fs-15 fw-semibold">
+                                                            {{
+                                                            config('app.transaction_status')[$transaction->transaction_status]
+                                                            }}
+                                                        </td>
+                                                        @elseif ($transaction->transaction_status == 3)
+                                                        <td class="text-danger fs-15 fw-semibold">
+                                                            {{
+                                                            config('app.transaction_status')[$transaction->transaction_status]
+                                                            }}
+                                                        </td>
+                                                        @else
+                                                        <td class="text-info fs-15 fw-semibold">
+                                                            {{
+                                                            config('app.transaction_status')[$transaction->transaction_status]
+                                                            }}
+                                                        </td>
+                                                        @endif
+                                                        <td class="d-flex">
+                                                            @if ($transaction->transaction_status == 1)
+                                                            <form
+                                                                action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="action"
+                                                                    value="approve_transaction">
+                                                                <input type="hidden" name="id"
+                                                                    value="{{ $transaction->transaction_id }}">
+                                                                <button class="btn btn-info btn-sm mx-1 confirm "
+                                                                    type="submit">
+                                                                    <i class="fas fa-check"></i>
+                                                                    Approve
+                                                                </button>
+                                                            </form>
+                                                            <form
+                                                                action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="action"
+                                                                    value="decline_transaction">
+                                                                <input type="hidden" name="id"
+                                                                    value="{{ $transaction->transaction_id }}">
+                                                                <button class="btn btn-danger btn-sm mx-1 confirm"
+                                                                    type="submit">
+                                                                    <i class="far fa-times-circle"></i>
+                                                                    Decline
+                                                                </button>
+                                                            </form>
+                                                            @else
+                                                            <button class="btn btn-success btn-sm" type="submit"
+                                                                disabled>Completed</button>
+                                                            @endif
+
+                                                        </td>
+                                                    </tr>
 
                                                     @empty
                                                     @endforelse
@@ -301,51 +332,51 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($trades as $counter => $trade)
-                                                        <tr>
-                                                            <td> {{ $counter + 1 }}</td>
-                                                            <td>{{ date('Y/m/d h:i a', strtotime($trade->trade_time)) }}
-                                                            </td>
-                                                            <td>{{ $trade->trade_by }}</td>
-                                                            <td>{{ $trade->trade_type }}</td>
-                                                            <td>{{ $trade->trade_asset }}</td>
-                                                            <td>${{ number_format($trade->trade_stake_amount, 2) }}
-                                                            </td>
-                                                            <td>{{ $trade->trade_duration }}</td>
-                                                            @if ($trade->trade_status == 3)
-                                                                <td class="text-success fs-15 fw-semibold">
-                                                                    + ${{ $trade->trade_profit_loss_amount }}
-                                                                </td>
-                                                            @elseif ($trade->trade_status == 2)
-                                                                <td class="text-danger fs-15 fw-semibold">-
-                                                                    ${{ $trade->trade_profit_loss_amount }}</td>
-                                                            @else
-                                                                <td class="text-info fs-15 fw-semibold">
-                                                                    --/--
-                                                                </td>
-                                                            @endif
+                                                    <tr>
+                                                        <td> {{ $counter + 1 }}</td>
+                                                        <td>{{ date('Y/m/d h:i a', strtotime($trade->trade_time)) }}
+                                                        </td>
+                                                        <td>{{ $trade->trade_by }}</td>
+                                                        <td>{{ $trade->trade_type }}</td>
+                                                        <td>{{ $trade->trade_asset }}</td>
+                                                        <td>${{ number_format($trade->trade_stake_amount, 2) }}
+                                                        </td>
+                                                        <td>{{ $trade->trade_duration }}</td>
+                                                        @if ($trade->trade_status == 3)
+                                                        <td class="text-success fs-15 fw-semibold">
+                                                            + ${{ $trade->trade_profit_loss_amount }}
+                                                        </td>
+                                                        @elseif ($trade->trade_status == 2)
+                                                        <td class="text-danger fs-15 fw-semibold">-
+                                                            ${{ $trade->trade_profit_loss_amount }}</td>
+                                                        @else
+                                                        <td class="text-info fs-15 fw-semibold">
+                                                            --/--
+                                                        </td>
+                                                        @endif
 
-                                                            @if ($trade->trade_status == 3)
-                                                                <td class="text-success fs-15 fw-semibold">
-                                                                    {{ config('app.trade_status')[$trade->trade_status] }}
-                                                                </td>
-                                                            @elseif ($trade->trade_status == 2)
-                                                                <td class="text-danger fs-15 fw-semibold">
-                                                                    {{ config('app.trade_status')[$trade->trade_status] }}
-                                                                </td>
-                                                            @else
-                                                                <td class="text-info fs-15 fw-semibold">
-                                                                    {{ config('app.trade_status')[$trade->trade_status] }}
-                                                                </td>
-                                                            @endif
-                                                            <td>
-                                                                <a class="btn btn-primary btn-sm rounded-11 me-2"
-                                                                    href="{{ route('edit_trade', [$user_data->id, $trade->id]) }}">
-                                                                    <i class="far fa-edit"></i>
-                                                                    manage
-                                                                </a>
-                                                            </td>
+                                                        @if ($trade->trade_status == 3)
+                                                        <td class="text-success fs-15 fw-semibold">
+                                                            {{ config('app.trade_status')[$trade->trade_status] }}
+                                                        </td>
+                                                        @elseif ($trade->trade_status == 2)
+                                                        <td class="text-danger fs-15 fw-semibold">
+                                                            {{ config('app.trade_status')[$trade->trade_status] }}
+                                                        </td>
+                                                        @else
+                                                        <td class="text-info fs-15 fw-semibold">
+                                                            {{ config('app.trade_status')[$trade->trade_status] }}
+                                                        </td>
+                                                        @endif
+                                                        <td>
+                                                            <a class="btn btn-primary btn-sm rounded-11 me-2"
+                                                                href="{{ route('edit_trade', [$user_data->id, $trade->id]) }}">
+                                                                <i class="far fa-edit"></i>
+                                                                manage
+                                                            </a>
+                                                        </td>
 
-                                                        </tr>
+                                                    </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>
@@ -381,74 +412,77 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($plans_transactions as $counter => $plans_transaction)
-                                                        <tr>
-                                                            <td>{{ $counter + 1 }}</td>
-                                                            <td>{{ date('Y-M-d h:i a', strtotime($plans_transaction->created_at)) }}
-                                                            </td>
-                                                            <td>{{ $plans_transaction->plan_name }}</td>
-                                                            <td>${{ number_format($plans_transaction->plan_amount, 2) }}
-                                                            </td>
-                                                            <td>{{ $plans_transaction->plan_duration }}</td>
-                                                            <td>
-                                                                @if ($plans_transaction->plan_ROI)
-                                                                    {{ $plans_transaction->plan_ROI }}%
-                                                                @elseif($plans_transaction->plan_signal_strength)
-                                                                    {{ $plans_transaction->plan_signal_strength }}%
-                                                                @else
-                                                                    No data
-                                                                @endif
+                                                    <tr>
+                                                        <td>{{ $counter + 1 }}</td>
+                                                        <td>{{ date('Y-M-d h:i a',
+                                                            strtotime($plans_transaction->created_at)) }}
+                                                        </td>
+                                                        <td>{{ $plans_transaction->plan_name }}</td>
+                                                        <td>${{ number_format($plans_transaction->plan_amount, 2) }}
+                                                        </td>
+                                                        <td>{{ $plans_transaction->plan_duration }}</td>
+                                                        <td>
+                                                            @if ($plans_transaction->plan_ROI)
+                                                            {{ $plans_transaction->plan_ROI }}%
+                                                            @elseif($plans_transaction->plan_signal_strength)
+                                                            {{ $plans_transaction->plan_signal_strength }}%
+                                                            @else
+                                                            No data
+                                                            @endif
 
-                                                            </td>
-                                                            <td>
-                                                                @if ($plans_transaction->plan_transaction_status == 1)
-                                                                    <span class="text-primary fs-15 fw-semibold">
-                                                                        {{ config('app.plan_transaction_status')[$plans_transaction->plan_transaction_status] }}
-                                                                    </span>
-                                                                @else
-                                                                    <span class="text-success fs-15 fw-semibold">
-                                                                        {{ config('app.plan_transaction_status')[$plans_transaction->plan_transaction_status] }}
-                                                                    </span>
-                                                                @endif
-                                                            </td>
-                                                            <td class="d-flex">
-                                                                @if ($plans_transaction->plan_transaction_status == 1)
-                                                                    <form
-                                                                        action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="action"
-                                                                            value="complete_transaction">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $plans_transaction->id }}">
-                                                                        <button
-                                                                            class="btn btn-info btn-sm mx-1 confirm "
-                                                                            type="submit">
-                                                                            <i class="fas fa-check"></i>
-                                                                            Complete
-                                                                        </button>
-                                                                    </form>
-                                                                    <form
-                                                                        action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        <input type="hidden" name="action"
-                                                                            value="delete_transaction">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $plans_transaction->id }}">
-                                                                        <button
-                                                                            class="btn btn-danger btn-sm mx-1 confirm"
-                                                                            type="submit">
-                                                                            <i class="fas fa-trash-alt"></i>
-                                                                            Delete
-                                                                        </button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="btn btn-success btn-sm"
-                                                                        type="submit" disabled>Completed</button>
-                                                                @endif
+                                                        </td>
+                                                        <td>
+                                                            @if ($plans_transaction->plan_transaction_status == 1)
+                                                            <span class="text-primary fs-15 fw-semibold">
+                                                                {{
+                                                                config('app.plan_transaction_status')[$plans_transaction->plan_transaction_status]
+                                                                }}
+                                                            </span>
+                                                            @else
+                                                            <span class="text-success fs-15 fw-semibold">
+                                                                {{
+                                                                config('app.plan_transaction_status')[$plans_transaction->plan_transaction_status]
+                                                                }}
+                                                            </span>
+                                                            @endif
+                                                        </td>
+                                                        <td class="d-flex">
+                                                            @if ($plans_transaction->plan_transaction_status == 1)
+                                                            <form
+                                                                action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="action"
+                                                                    value="complete_transaction">
+                                                                <input type="hidden" name="id"
+                                                                    value="{{ $plans_transaction->id }}">
+                                                                <button class="btn btn-info btn-sm mx-1 confirm "
+                                                                    type="submit">
+                                                                    <i class="fas fa-check"></i>
+                                                                    Complete
+                                                                </button>
+                                                            </form>
+                                                            <form
+                                                                action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="action"
+                                                                    value="delete_transaction">
+                                                                <input type="hidden" name="id"
+                                                                    value="{{ $plans_transaction->id }}">
+                                                                <button class="btn btn-danger btn-sm mx-1 confirm"
+                                                                    type="submit">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                                    Delete
+                                                                </button>
+                                                            </form>
+                                                            @else
+                                                            <button class="btn btn-success btn-sm" type="submit"
+                                                                disabled>Completed</button>
+                                                            @endif
 
-                                                            </td>
-                                                        </tr>
+                                                        </td>
+                                                    </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>
@@ -482,80 +516,76 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($kyc as $counter => $kyc)
-                                                        <tr>
-                                                            <td>{{ $counter + 1 }}</td>
-                                                            <td>{{ date('Y/M/d h:i a', strtotime($kyc->created_at)) }}
-                                                            </td>
-                                                            <td>{{ $kyc->kyc_document }}</td>
-                                                            @if ($kyc->kyc_status == 2)
-                                                                <td class="text-success fs-15 fw-semibold">
-                                                                    {{ config('app.kyc_status')[$kyc->kyc_status] }}
-                                                                </td>
-                                                            @elseif ($kyc->kyc_status == 3)
-                                                                <td class="text-danger fs-15 fw-semibold">
-                                                                    {{ config('app.kyc_status')[$kyc->kyc_status] }}
-                                                                </td>
-                                                            @else
-                                                                <td class="text-info fs-15 fw-semibold">
-                                                                    {{ config('app.kyc_status')[$kyc->kyc_status] }}
-                                                                </td>
-                                                            @endif
-                                                            <td>
-                                                                <a href="{{ asset('storage/' . $kyc->kyc_proof_front) }}"
-                                                                    target="_blank"
-                                                                    class="badge bg-info mx-2 rounded-pill">
-                                                                    front
-                                                                    <i class="fas fa-eye"></i>
-                                                                </a>
-                                                                <a href="{{ asset('storage/' . $kyc->kyc_proof_back) }}"
-                                                                    target="_blank"
-                                                                    class="badge bg-info mx-2 rounded-pill">
-                                                                    back
-                                                                    <i class="fas fa-eye"></i>
-                                                                </a>
-                                                            </td>
-                                                            <td>
-                                                                <div class="d-flex">
-                                                                    @if ($kyc->kyc_status == 1)
-                                                                        <form
-                                                                            action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                            method="post">
-                                                                            @csrf
-                                                                            <input type="hidden" name="action"
-                                                                                value="approve_kyc">
-                                                                            <input type="hidden" name="id"
-                                                                                value="{{ $kyc->kyc_id }}">
-                                                                            <button
-                                                                                class="btn btn-info btn-sm mx-1 confirm "
-                                                                                type="submit">
-                                                                                <i class="fas fa-check"></i>
-                                                                                Approve
-                                                                            </button>
-                                                                        </form>
-                                                                        <form
-                                                                            action="{{ route('edit_user_post', [$user_data->id]) }}"
-                                                                            method="post">
-                                                                            @csrf
-                                                                            <input type="hidden" name="action"
-                                                                                value="decline_kyc">
-                                                                            <input type="hidden" name="id"
-                                                                                value="{{ $kyc->kyc_id }}">
-                                                                            <button
-                                                                                class="btn btn-danger btn-sm mx-1 confirm"
-                                                                                type="submit">
-                                                                                <i class="far fa-times-circle"></i>
-                                                                                Decline
-                                                                            </button>
-                                                                        </form>
-                                                                    @else
-                                                                        <button class="btn btn-success btn-sm"
-                                                                            type="submit" disabled>Completed</button>
-                                                                    @endif
-                                                                </div>
+                                                    <tr>
+                                                        <td>{{ $counter + 1 }}</td>
+                                                        <td>{{ date('Y/M/d h:i a', strtotime($kyc->created_at)) }}
+                                                        </td>
+                                                        <td>{{ $kyc->kyc_document }}</td>
+                                                        @if ($kyc->kyc_status == 2)
+                                                        <td class="text-success fs-15 fw-semibold">
+                                                            {{ config('app.kyc_status')[$kyc->kyc_status] }}
+                                                        </td>
+                                                        @elseif ($kyc->kyc_status == 3)
+                                                        <td class="text-danger fs-15 fw-semibold">
+                                                            {{ config('app.kyc_status')[$kyc->kyc_status] }}
+                                                        </td>
+                                                        @else
+                                                        <td class="text-info fs-15 fw-semibold">
+                                                            {{ config('app.kyc_status')[$kyc->kyc_status] }}
+                                                        </td>
+                                                        @endif
+                                                        <td>
+                                                            <a href="{{ asset('storage/' . $kyc->kyc_proof_front) }}"
+                                                                target="_blank" class="badge bg-info mx-2 rounded-pill">
+                                                                front
+                                                                <i class="fas fa-eye"></i>
+                                                            </a>
+                                                            <a href="{{ asset('storage/' . $kyc->kyc_proof_back) }}"
+                                                                target="_blank" class="badge bg-info mx-2 rounded-pill">
+                                                                back
+                                                                <i class="fas fa-eye"></i>
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex">
+                                                                @if ($kyc->kyc_status == 1)
+                                                                <form
+                                                                    action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                    method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="action"
+                                                                        value="approve_kyc">
+                                                                    <input type="hidden" name="id"
+                                                                        value="{{ $kyc->kyc_id }}">
+                                                                    <button class="btn btn-info btn-sm mx-1 confirm "
+                                                                        type="submit">
+                                                                        <i class="fas fa-check"></i>
+                                                                        Approve
+                                                                    </button>
+                                                                </form>
+                                                                <form
+                                                                    action="{{ route('edit_user_post', [$user_data->id]) }}"
+                                                                    method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="action"
+                                                                        value="decline_kyc">
+                                                                    <input type="hidden" name="id"
+                                                                        value="{{ $kyc->kyc_id }}">
+                                                                    <button class="btn btn-danger btn-sm mx-1 confirm"
+                                                                        type="submit">
+                                                                        <i class="far fa-times-circle"></i>
+                                                                        Decline
+                                                                    </button>
+                                                                </form>
+                                                                @else
+                                                                <button class="btn btn-success btn-sm" type="submit"
+                                                                    disabled>Completed</button>
+                                                                @endif
+                                                            </div>
 
 
-                                                            </td>
-                                                        </tr>
+                                                        </td>
+                                                    </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>

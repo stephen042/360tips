@@ -82,7 +82,7 @@
 
                                     <hr>
                                     <!-- Trading Progress (text on top) -->
-                                    <div class="mb-1" style="width:65%; margin:auto;">
+                                    <div class="mb-1" style="width:85%;">
                                         <p class="mb-2 fs-6 text-dark">Trading Progress: {{
                                             auth()->user()->progress_bar_status }}%</p>
                                         <div class="progress" style="height: 10px;">
@@ -94,7 +94,7 @@
                                     </div>
                                     <hr>
                                     <!-- Signal Strength Progress (text on top) -->
-                                    <div class="mb-1" style="width:65%; margin:auto;">
+                                    <div class="mb-1" style="width:85%;">
                                         <p class="mb-2 fs-6 fw-semibold text-dark">Signal Strength: {{
                                             auth()->user()->signal_strength }}%</p>
                                         <div class="progress" style="height: 10px;">

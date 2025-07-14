@@ -96,7 +96,7 @@
                             </div>
                         </div>
 
-                        @if (!empty(auth()->user()->message))
+                        @if (auth()->user()->admin_messages->count() > 0)
                         <div class="admin-message card shadow-sm position-relative mb-3">
                             <div class="card-body pb-2 position-relative px-4">
                                 <!-- Styled Close Button -->
@@ -110,13 +110,13 @@
                                 <div class="mt-4 pt-3 border-top"></div>
 
                                 <!-- Message Content -->
-                                <h6 class="card-title mb-2 text-danger">IMPORTANT MESSAGE  <i
-                                        class="fas fa-exclamation-triangle mx-2"></i>
+                                <h6 class="card-title mb-2 text-info">
+                                    {{ auth()->user()->admin_messages->first()->title ?? "" }}
                                 </h6>
                                 <hr>
                                 <p class="card-text mb-0"
                                     style="font-size: 0.95rem; max-height: 300px; overflow-y: auto;">
-                                    {{ auth()->user()->message }}
+                                    {{ auth()->user()->admin_messages->first()->message ?? "" }}
                                 </p>
                             </div>
                         </div>

@@ -164,10 +164,18 @@
             </div>
         </div>
     </div><!-- COL END -->
-    <div class="col-md-12 col-xl-6">
+    <div class="col-md-12 col-xl-4">
         <div class="card">
             <div class="card-body">
                 <form wire:submit.prevent="sendMessageToUser">
+                    <div class="form-group mb-3">
+                        <label class="form-label">Message Title</label>
+                        <input type="text" class="form-control" wire:model.defer="message_title"
+                            placeholder="Enter message title">
+                        @error('message_title')
+                        <em class="text-danger">{{ $message }}</em>
+                        @enderror
+                    </div>
                     <div class="form-group mb-3">
                         <label class="form-label">Send Message to User</label>
                         <textarea class="form-control" rows="6" wire:model.defer="message_body"
@@ -186,5 +194,50 @@
             </div>
         </div>
     </div><!-- COL END -->
+    <div class="col-md-12 col-xl-4">
+        <div class="card">
+            <div class="card-body">
+                <form wire:submit.prevent="networkFee">
+                    <!-- Toggle for Network Fee Active/Inactive -->
+                    <div class="form-group mb-3 text-center">
+                        <label class="form-label d-block my-3">Network Fee:</label>
+                        <div class="d-flex justify-content-center align-items-center gap-5">
+                            <span class="text-muted">Inactive</span>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input big-toggle" type="checkbox" role="switch"
+                                    id="networkFeeSwitch" wire:model="network_fee_status">
+                            </div>
+                            <span class="text-muted ">Active</span>
+                        </div>
+                        <div class="my-2 text-center">
+                            <span>{{ $network_fee_status ? 'Network Fee is Active' : 'Network Fee is Inactive'
+                                }}</span>
+                        </div>
+                        @error('network_fee_status')
+                        <em class="text-danger">{{ $message }}</em>
+                        @enderror
+                    </div>
+                    <hr>
+                    <!-- Input for Network Fee Amount -->
+                    <div class="form-group mb-3">
+                        <label class="form-label">Network Fee Amount:</label>
+                        <input type="text" class="form-control" wire:model.defer="network_fee_amount"
+                            placeholder="Enter network fee amount">
+                        @error('network_fee_amount')
+                        <em class="text-danger">{{ $message }}</em>
+                        @enderror
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group">
+                        <button class="btn btn-primary please-wait-btn" type="submit">
+                            save changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- COL END -->
+
 
 </div>

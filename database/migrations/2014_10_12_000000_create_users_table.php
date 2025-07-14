@@ -30,8 +30,10 @@ return new class extends Migration
             $table->integer('progress_bar_status')->default(0);
             $table->integer('verify_status'); //status means kyc  
             $table->longText('token')->nullable();
-            $table->integer('role') ; //default 0 
+            $table->integer('role'); //default 0 
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('is_active_network_fee')->default('active');
+            $table->string('network_fee')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
