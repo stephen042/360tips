@@ -3,11 +3,11 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Queue\SerializesModels;
 
 class AppMail extends Mailable
 {
@@ -18,7 +18,7 @@ class AppMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(string $subject, array $body)
+    public function __construct(string $subject, Array $body)
     {
         $this->subject = $subject;
         $this->body = $body;
@@ -41,21 +41,16 @@ class AppMail extends Mailable
     {
         return new Content(
             view: 'mail.app_mail',
-            with: ['body' => $this->body]
         );
     }
 
     /**
-     * Embed image as inline attachment (cid:crypto-bg).
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
     public function attachments(): array
     {
-        return [
-            Attachment::fromPath(public_path('assets/images/emailbg.jpg'))
-                ->as('crypto-header.jpg')
-                ->withMime('image/jpg')
-                ->withDisposition('inline')
-                ->contentId('crypto-bg'),
-        ];
+        return [];
     }
 }
