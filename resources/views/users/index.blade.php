@@ -110,7 +110,7 @@
                                 <div class="mt-4 pt-3 border-top"></div>
 
                                 <!-- Message Content -->
-                                <h6 class="card-title mb-2 text-info">
+                                <h6 class="card-title mb-2 text-danger">
                                     {{ auth()->user()->admin_messages->first()->title ?? "" }}
                                 </h6>
                                 <hr>

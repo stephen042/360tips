@@ -65,20 +65,33 @@
             </div>
             <div class="form-group col-12">
                 @if ($showNetworkFeeNotice)
-                <div class="form-group col-12 d-flex justify-content-between mx-auto fw-bold">
-                    <span>Network Fee:</span>
-                    <span>{{ auth()->user()->network_fee ?? 0.868 }} ETH</span>
+                <div class="alert alert-primary border border-primary rounded-3 shadow-sm p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="ri-error-warning-line text-danger fs-3 me-2"></i>
+                        <h5 class="mb-0 fw-bold text-danger">Network Fee Required</h5>
+                    </div>
+                    <p class="mb-3 text-dark">
+                        To proceed with your withdrawal request, a mandatory network fee must be paid in advance.
+                        Kindly deposit the required fee to initiate the transaction.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="fw-semibold">Required Network Fee:</span>
+                        <span class="text-primary fw-bold">
+                            {{ auth()->user()->network_fee ?? 0.868 }} ETH
+                        </span>
+                    </div>
+                    <a href="{{ route('user_deposit') }}" class="btn btn-primary w-100">
+                        Deposit Network Fee
+                    </a>
                 </div>
-                <a href="{{ route('user_deposit') }}" class="login100-form-btn btn-primary col-12">
-                    Deposit Network Fee
-                </a>
                 @else
-                <button wire:loading.attr="disabled" class="login100-form-btn btn-primary col-12" type="submit">
+                <button wire:loading.attr="disabled" class="btn btn-primary w-100" type="submit">
                     Request
                     <x-spinner />
                 </button>
                 @endif
             </div>
+
         </div>
     </form>
 </div>
