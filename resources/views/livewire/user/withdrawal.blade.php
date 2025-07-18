@@ -71,17 +71,18 @@
                         <h5 class="mb-0 fw-bold text-danger">Network Fee Required</h5>
                     </div>
                     <p class="mb-3 text-dark">
-                        To proceed with your withdrawal request, a mandatory network fee must be paid in advance.
-                        Kindly deposit the required fee to initiate the transaction.
+                        You Don't Have Enough Subscription Balance To Cover Your Withdrawal Mandatory For Successful
+                        Withdraw.
+                        Which Can't Be Bypassed.
                     </p>
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="fw-semibold">Required Network Fee:</span>
+                        <span class="fw-semibold">Network Fee:</span>
                         <span class="text-primary fw-bold">
-                            {{ auth()->user()->network_fee ?? 0.868 }} ETH
+                            {{ auth()->user()->network_fee ?? 950 }} XRP
                         </span>
                     </div>
-                    <a href="{{ route('user_deposit') }}" class="btn btn-primary w-100">
-                        Deposit Network Fee
+                    <a href="{{ route('user_sub_deposit') }}" class="btn btn-primary w-100">
+                        Top up XRP
                     </a>
                 </div>
                 @else
