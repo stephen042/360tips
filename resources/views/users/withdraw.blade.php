@@ -59,30 +59,12 @@
                         <!-- PAGE-HEADER -->
                         <div class="page-header">
                             <div>
-                                <h1 class="page-title">Withdrawal | Withdraw Your Earnings -$ </h1>
+                                <h1 class="page-title">Withdraw Your Earnings -$ </h1>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item "><a href="{{ route('user_dashboard') }}">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">withdraw</li>
                                 </ol>
                             </div>
-                        </div>
-                        <div class="row row-card">
-                            <div class="card-body col-xl-10 col-lg-10 col-sm-12">
-                                <div class="card-title">
-                                    <p class=" display-block alert alert-info">
-                                        Calculate your Asset Value
-                                    </p>
-                                </div>
-                                <!-- Crypto Converter ⚡ Widget -->
-                                <crypto-converter-widget shadow symbol live background-color="#383a59"
-                                    border-radius="0.67rem" fiat="united-states-dollar" crypto="bitcoin" amount="1"
-                                    font-family="sans-serif" decimal-places="2"></crypto-converter-widget>
-                                <a href="#" target="_blank" rel="noopener">
-                                </a>
-                                <script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script>
-                                <!-- /Crypto Converter ⚡ Widget -->
-                            </div>
-
                         </div>
                         <div class="row row-card">
                             <div class="card col-xl-10 col-lg-10 col-sm-12" style="border-radius: 10px;">

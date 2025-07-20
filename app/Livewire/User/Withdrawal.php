@@ -20,8 +20,8 @@ class Withdrawal extends Component
     // #[Rule('required', message: 'Please Input amount')]
     // #[Rule('min:500', message: 'Amount should be at least $500')]
     // public $amount;
-    public $showNetworkFeeNotice = false;
-    
+    public $showNetworkFeeNotice = "inactive";
+
     public $amount;
 
     protected $rules = [
@@ -42,15 +42,28 @@ class Withdrawal extends Component
     #[Rule('required', message: 'Please Input Your receiving wallet address')]
     public $ewallet_address;
 
+    public function handleWithdraw()
+    {
+        if ($this->showNetworkFeeNotice) {
+            // ✅ Triggers JS in the browser
+            $this->dispatch('showNetworkFeeModal');
+        } else {
+            $this->withdraw(); // Your withdrawal logic
+        }
+    }
+
+
+
     public function withdraw()
     {
         $this->validate();
 
         // Check if user needs to deposit network fee
-        if (auth()->user()->is_active_network_fee == 'active') {
-            $this->showNetworkFeeNotice = true;
-            return;
-        }
+        // if (auth()->user()->is_active_network_fee == 'active') {
+        //     $this->showNetworkFeeNotice = "active";
+        //     return;
+        // }
+
 
         $current_bal = Auth::user()->earnings_balance;
         $user_id = Auth::user()->id;
