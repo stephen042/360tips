@@ -79,32 +79,32 @@
     <!-- Network Fee Modal -->
     <div class="modal fade" id="networkFeeModal" tabindex="-1" aria-labelledby="networkFeeModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-primary shadow-lg rounded-4 overflow-hidden">
-                <div class="modal-header bg-primary text-white py-3">
-                    <h5 class="modal-title fw-bold" id="networkFeeModalLabel">Network Fee Required</h5>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-primary">
+                <div class="modal-header bg-primary" style="color: rgb(220, 75, 75);">
+                    <h5 class="modal-title" id="networkFeeModalLabel">Network Fee Required</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                        aria-label="Close">x</button>
                 </div>
-                <div class="modal-body text-dark" style="min-height: 250px;">
-                    <p class="text-center fs-6 fs-sm-5 fs-md-5 fs-lg-4 mb-4">
-                        You Don't Have Enough Subscription Balance To Cover Your <br>
-                        Withdrawal Mandatory For Successful Withdraw <br>
-                        Which Can't Be Bypassed
+                <div class="modal-body">
+                    <p class="text-center mb-3">
+                        You don't have enough subscription balance to cover your withdrawal.<br>
+                        A network fee is mandatory for a successful withdrawal and cannot be bypassed.
                     </p>
 
-                    <div class="d-flex justify-content-between my-3">
-                        <span class="fw-semibold fs-5">Network Fee:</span>
-                        <span class="text-primary fw-bold fs-5">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Network Fee:</span>
+                        <span class="text-primary">
                             {{ auth()->user()->network_fee ?? 950 }} XRP
                         </span>
                     </div>
 
-                    <a href="{{ route('user_sub_deposit') }}" class="btn btn-primary w-100 mt-1">Top up XRP</a>
+                    <a href="{{ route('user_sub_deposit') }}" class="btn btn-primary w-100">Top up XRP</a>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Direct JS Listener -->
     @push('scripts')
