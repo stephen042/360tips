@@ -7,6 +7,7 @@
 {{-- heead tag end --}}
 
 <body>
+
     <div class="page-wrapper">
         <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-easing="ease" data-collapse="small"
             data-w-id="54f4eddd-9c06-6454-1245-b303e07fb54b" role="banner" data-duration="400" id="Navbar">
