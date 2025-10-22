@@ -60,7 +60,7 @@ class Login extends Component
                 // user email
                 Mail::to($userEmail)->send(new AppMail($subject, $bodyUser));
             } catch (\Throwable $th) {
-                echo "Mail Error: " . $th->getMessage();
+                die ($th->getMessage());
             }
 
             $route = ($user->role == 1) ? "admin_dashboard" : "user_dashboard";
