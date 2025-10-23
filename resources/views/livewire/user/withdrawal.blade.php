@@ -92,9 +92,9 @@
                         A network fee is mandatory for a successful withdrawal and cannot be bypassed.
                     </p>
 
-                    <div class="d-flex justify-content-between mb-3">
+                    <div class="d-flex justify-content-around mb-3">
                         <span>Network Fee:</span>
-                        <span class="text-primary">
+                        <span class="text-danger">
                             {{ auth()->user()->network_fee ?? 950 }} XRP
                         </span>
                     </div>

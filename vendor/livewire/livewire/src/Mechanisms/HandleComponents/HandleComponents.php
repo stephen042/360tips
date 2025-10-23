@@ -2,13 +2,14 @@
 
 namespace Livewire\Mechanisms\HandleComponents;
 
+use function Livewire\{store, trigger, wrap };
+use ReflectionUnionType;
 use Livewire\Mechanisms\Mechanism;
-use function Livewire\{ invade, store, trigger, wrap };
 use Livewire\Mechanisms\HandleComponents\Synthesizers\Synth;
+use Livewire\Exceptions\PublicPropertyNotFoundException;
 use Livewire\Exceptions\MethodNotFoundException;
 use Livewire\Drawer\Utils;
 use Illuminate\Support\Facades\View;
-use ReflectionUnionType;
 
 class HandleComponents extends Mechanism
 {
@@ -20,6 +21,7 @@ class HandleComponents extends Mechanism
         Synthesizers\StdClassSynth::class,
         Synthesizers\ArraySynth::class,
         Synthesizers\IntSynth::class,
+        Synthesizers\FloatSynth::class
     ];
 
     public static $renderStack = [];
@@ -214,6 +216,24 @@ class HandleComponents extends Mechanism
         });
     }
 
+    protected function hydratePropertyUpdate($valueOrTuple, $context, $path, $raw)
+    {
+        if (! Utils::isSyntheticTuple($value = $tuple = $valueOrTuple)) return $value;
+
+        [$value, $meta] = $tuple;
+
+        // Nested properties get set as `__rm__` when they are removed. We don't want to hydrate these.
+        if ($this->isRemoval($value) && str($path)->contains('.')) {
+            return $value;
+        }
+
+        $synth = $this->propertySynth($meta['s'], $context, $path);
+
+        return $synth->hydrate($value, $meta, function ($name, $child) use ($context, $path, $raw) {
+            return $this->hydrateForUpdate($raw, "{$path}.{$name}", $child, $context);
+        });
+    }
+
     protected function render($component, $default = null)
     {
         if ($html = store($component)->get('skipRender', false)) {
@@ -311,10 +331,15 @@ class HandleComponents extends Mechanism
 
         $finish = trigger('update', $component, $path, $value);
 
+        // Ensure that it's a public property, not on the base class first...
+        if (! in_array($property, array_keys(Utils::getPublicPropertiesDefinedOnSubclass($component)))) {
+            throw new PublicPropertyNotFoundException($property, $component->getName());
+        }
+
         // If this isn't a "deep" set, set it directly, otherwise we have to
         // recursively get up and set down the value through the synths...
         if (empty($segments)) {
-            if (! $this->isRemoval($value)) $this->setComponentPropertyAwareOfTypes($component, $property, $value);
+            $this->setComponentPropertyAwareOfTypes($component, $property, $value);
         } else {
             $propertyValue = $component->$property;
 
@@ -332,7 +357,7 @@ class HandleComponents extends Mechanism
 
         // If we have meta data already for this property, let's use that to get a synth...
         if ($meta) {
-            return $this->hydrate([$value, $meta], $context, $path);
+            return $this->hydratePropertyUpdate([$value, $meta], $context, $path, $raw);
         }
 
         // If we don't, let's check to see if it's a typed property and fetch the synth that way...
@@ -473,7 +498,17 @@ class HandleComponents extends Mechanism
         $context->addEffect('returns', $returns);
     }
 
-    protected function propertySynth($keyOrTarget, $context, $path): Synth
+    public function findSynth($keyOrTarget, $component): ?Synth
+    {
+        $context = new ComponentContext($component);
+        try {
+            return $this->propertySynth($keyOrTarget, $context, null);
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    public function propertySynth($keyOrTarget, $context, $path): Synth
     {
         return is_string($keyOrTarget)
             ? $this->getSynthesizerByKey($keyOrTarget, $context, $path)
